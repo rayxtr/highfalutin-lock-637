@@ -1,0 +1,9 @@
+jeevansathi.com : https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/jeevansathi.png
+99acers : https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/nnacres.png
+shiksha : https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/shiksha.png
+hirist :https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/hirist.png
+jobhai: https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/jobhai.png
+firstNaukari : https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/firstNaukri.png
+iimjobs : https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/iimjobs.png
+naukariGulf.com : https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/ng.png
+techminis : https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/techminis.png
