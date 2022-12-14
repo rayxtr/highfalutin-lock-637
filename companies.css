@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+body {
+    background: #fff;
+    /* font-family: "Inter"; */
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+    color: #1b2437;
+    position: relative;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+.top1 {
+    text-align: center;
+    /* background-color: #fbfbfc; */
+    background: linear-gradient(0deg, #ffffff, #f2f2f6);
+    
+}
+.top1 h1 {
+    font-size: 28px;
+    font-weight: 700;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    line-height: 40px;
+}
+
+.top2 {
+    position: absolute;
+    z-index: 1;
+    top: 110px;
+    left: 18%;
+    right: 18%;
+    /* width: 80%; */
+    margin: auto;
+    background-color: #F7F8FF;
+    padding: 30px;
+    border: 1px solid #DFE2FF;
+    border-radius: 12px 6px;
+    box-sizing: border-box;
+}
+.top2>div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.top2>div>div {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 60px;
+    width: 130px;
+    cursor: pointer;
+    border-radius: 12px 6px;
+    border: 1px solid rgba(223, 226, 255, 0.5);
+    box-shadow: 0px 2px 6px #e4daff;
+}
+.top2 h2{
+    line-height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    font-size: 20px;
+}
+.top2 p{
+    line-height: 30px;
+    color: #457eff;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.mid {
+    display: flex;
+    position: absolute;
+    top: 300px;
+}
+
+.filter {
+    width: 280px;
+}
+.filter h2 {
+    padding-bottom: 20px;
+    color: #8292b4;
+    font-size: 24px;
+    line-height: 40px;
+}
+.filter ul li {
+    border-top: 1px solid #d3e1ea;
+    padding: 20px 4px;  
+}
+.filter ul li div:first-child{
+    display: flex;
+}
+.filter ul li h4 {
+    font-weight: 600;
+    width: calc(100% - 16px);
+    color: #1b2437;
+    font-size: 18px;
+    line-height: 20px;
+}
+.filter ul li div:last-child{
+    padding: 4px 0;
+    margin-top: 14px;
+    max-height: 150px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+.filter ul li div:last-child input {
+    border: 1px solid transparent;
+    margin: 6px 0;
+    width: 100%; 
+}
