@@ -123,5 +123,5 @@ main {
 .filter ul li div:last-child input {
     border: 1px solid transparent;
     margin: 6px 0;
-    width: 100%;
+    width: 100%; 
 }
