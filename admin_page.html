@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./admin_page.css" />
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+        
+        <a href="#home" class="active"><img src="./admin_logo.png" alt=""></a>
+        
+        <a href="#about" class="content">Administrative</a>
+        <a href="#news" class="content">Term of Use</a>
+        <a href="#news" class="content">Visit Our Website</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+      
+   <div class="searchbar">
+    <div id="select_data">
+        <select name="selectdata" id="selectdata">
+            <option value="all data">Select Data</option>
+            <option value="company">Data of All Companies</option>
+            <option value="user">Data of all Users</option>
+        </select>
+    </div>
+    <div id="main_searchbar">
+           <div id="bar">
+            <input type="text" placeholder="Search.." name="search" id="search_data">
+           </div>
+            <div id="btn">
+                <button id="search_btn"><i class="fa fa-search"></i></button>
+            </div>
+    </div>
+    <div id="add_page_btn">
+        <p><a href=""></a>ADD JOBS</p>
+   </div>
+   </div>
+   
+   <div class="maincontainer">
+    <h1>DATA OF COMPNIES</h1>
+    <table>
+        <tr>
+          <th>Company Logo</th>
+          <th>Company Name</th>
+          <th>Job Role</th>
+          <th>Edit Data</th>
+          <th>Delete Data</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        
+      </table>
+   </div>
+
+
+      <script src="./admin_page.js"></script>
+  </body>
+</html>
+
