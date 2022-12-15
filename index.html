@@ -14,6 +14,8 @@
 
     <title>JobHunt.com</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="nav_and_footer.css">
+    
 </head>
 <body>
 
@@ -21,7 +23,7 @@
 <div id="nav" class="box-shdow">
     <div id="navleft">
         <div id="dashboardlogo"><img width="100%"  src="images/logo/jobHunt1.com.png" alt="logo"></div>
-        <ul><a  class="css-ul-hover-menu"  href="#">Jobs</a></ul>
+        <ul><a id="job" class="css-ul-hover-menu"  href="#">Jobs</a></ul>
         <ul><a class="css-ul-hover-menu" href="#">Companies</a></ul>
         <ul><a class="css-ul-hover-menu" href="#">Services</a></u>
     </div>
@@ -34,19 +36,70 @@
              <ul  ><a class="css-ul css-ul-hover1-menu"  href="#">For Employer</a></ul>
         </div>
     </div>
+   </div>
+   <!-- dropdown section  -->
+   <div class="dropdown">
+      <div>
+         <h4>Popular Categories</h4>
 
+      </div>
+      <div>
+         <h4>Job in demands</h4>
+      </div>
+      <div>
+        <h4>Job by location</h4>
+      </div>
+      <div>
+        <h4>Explore more jobs</h4>
 
-      </div><div id="main-container">
+      </div>
+
+   </div>
+   <div id="main-container">
 
 
 <!-- Search Section -->
 <div id="searchsection">
+    <h1>Find your dream job now</h1> 
+    <h4>5 lakh+ jobs for you to explore</h4>
+  
+<div >
+    <img src="https://static.naukimg.com/s/7/103/i/search.9ec0e1ac.svg" alt="">
+    <input type="text" id="jobsearch" placeholder="Enter skills/Designations/Companies">
+    <select name="experience" id="expsearch" placeholder="Select Experience">Select Experience</select>
+    <input type="text" id="locationinput" placeholder="Location">
+    <button id="searchbtn">Search</button>
+</div>
+
+</div>
+<div id="jobcard">
 
 </div>
 
 <!-- Company Hiring Section -->
+ 
+<div id="company">
+<h1>
+    Top companies hiring now
+</h1>
+<div class="displaycompany">
+  
+</div>
+</div>
 
 <!-- Featured Companies -->
+
+<div id="featuredcompany">
+<h1>Featured companies actively hiring</h1>
+<div>
+    <div>All</div>
+    <div>IT Services</div>
+    <div>BFSI</div>
+</div>
+<div id="featureslide">
+
+</div>
+</div>
 
 <!-- Job Across Popular roles -->
 
@@ -58,7 +111,22 @@
 
 <!-- Video Profile  -->
 
-
+   <div id="ad">
+    <div>
+        <h2>
+            10M+ users are on the Naukri app
+        </h2>
+        <p>
+            Get real-time job updates & more!
+        </p>
+        <img src="https://static.naukimg.com/s/0/0/i/new-homepage/android-app.png" alt="">
+        <img src="https://static.naukimg.com/s/0/0/i/new-homepage/ios-app.png" alt="">
+    </div>
+    <div>
+        <img width="40%" src="https://static.naukimg.com/s/0/0/i/download-app-link/qr-code.svg" alt="">
+    </div>
+    <img src="https://static.naukimg.com/s/0/0/i/download-app-link/MaskGroup.png" alt="">
+   </div>
     </div>
 
     <!-- Footer  -->

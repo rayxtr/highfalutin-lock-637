@@ -1,0 +1,204 @@
+.box-shdow{ 
+   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  
+  }
+  #nav{
+   
+    position: sticky;
+    top: 0;
+    width: 100%;;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content:space-between;
+    padding: 5px;
+    background-color: white;
+    font-family: Inter,Roboto,sans-serif,Helvetica;
+  }
+  #navleft>div{ 
+    width: 25%;
+   
+  }
+  #navleft{
+  width: 40%;
+    display: flex;
+    justify-content:space-around;
+    margin-left: 20px;
+  }
+  #navleft ul>a{
+    text-decoration: none;
+    color: rgb(49, 47, 47);
+    opacity: 80%;
+    font-weight: bold;
+    /* margin: auto; */
+
+  }
+  #navright{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+  #navright>div{
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #loginbtn{
+    margin: auto;
+    height: 40px;
+    width:90px ;
+    border-radius:20px;
+    font-size: medium;
+    font-weight: bold;
+    border : 1px rgb(56, 116, 238) solid;
+    color: rgb(56, 116, 238);
+    background-color: white;
+  }
+  #loginbtn:hover{
+    border : 1px rgb(198, 21, 21) solid;
+    color: rgb(198, 21, 21);
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  #registerbtn:hover{
+    border : 1px rgb(56, 116, 238) solid;
+    color: rgb(255, 255, 255);
+    background-color: rgb(56, 116, 238);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  #registerbtn{
+   
+    margin: auto;
+    height: 40px;
+    width:90px ;
+    border-radius:20px;
+    font-size: medium;
+    font-weight: bold;
+    border : 0px rgb(56, 116, 238) solid;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 91, 41);
+  }
+  
+  .css-ul{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    opacity: 80%;
+    font-weight: bold;
+  }
+  .css-ul-hover:hover{
+color: blue;
+  }
+  .css-ul-hover-menu:hover{
+
+    color: black;
+    padding: 10px;
+    border-bottom: 4px solid white;
+    border-bottom-color:rgb(56, 116, 238);
+    
+    
+      }
+      .css-ul-hover1-menu:hover{
+
+        color: black;
+        padding: 10px;
+        border-bottom: 4px solid white;
+        border-bottom-color:rgb(238, 112, 16);
+        
+        
+          }
+
+         #navleft ul li{
+            list-style-type: none;
+            float: left;
+            width: 120px;
+         } 
+
+  /* Dropdown css */
+ .dropdown{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    z-index: 1;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: none;
+ }
+ 
+
+
+
+  /* Footer   */
+#footer1{
+    font-family: Inter,Roboto,sans-serif,Helvetica;
+    width: 100%;
+   display: flex;
+   justify-content: space-evenly;
+  }
+  #f1left{
+    padding-left: 30px;
+    margin-top: 40px;
+    width: 25%;
+    margin-bottom: 30px;
+   
+  }
+  #f1left>div{
+   
+  }
+  
+  #f1mid{
+    margin-top: 40px;
+    margin-right: 10px;
+    width: 45%;
+  display: flex;
+  justify-content:flex-start;
+  margin-bottom: 30px;
+  }
+  #f1right{
+    margin-top: 40px;
+    width: 30%;
+  
+    padding-left: 30px;
+    font-family: Inter,Roboto,sans-serif,Helvetica;
+    margin-bottom: 30px;
+  }
+  #f1right>div{
+    padding-left: 20px;
+   padding-bottom: 20px;
+   border: 1px solid black;
+   border-radius: 10px;
+  }
+  #footer2{
+    margin-top: 40px;
+      display: flex;
+      justify-content: space-evenly;
+      
+  }
+  #footer2>div>img{
+    margin-top: 25px;
+  }
+  #footer2>div>p{
+    line-height: 10px;
+  }
+  .footer-link{
+    font-weight: normal;
+    opacity: 100%;
+  
+  }
+  #our_businesses{
+    display: flex;
+  }
+
+ /* medium screen */
+  @media screen and (min-width:480px) and (max-width:720px)  {
+    
+     #navleft ul{
+      display: none;
+     } 
+  }
+
+  /* small screen */
+ @media screen    and (min-width:0px) and (max-width:479px) {
+
+
+ }

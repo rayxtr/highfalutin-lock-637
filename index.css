@@ -8,130 +8,77 @@
   margin: auto;
  }
  /* Navigation Bar  */
-  .box-shdow{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  
-  }
-  #nav{
-   
-    position: sticky;
-    top: 0;
-    width: 100%;;
-    height: auto;
-    margin: auto;
-    display: flex;
-    justify-content:space-between;
-    padding: 5px;
-    background-color: white;
-    font-family: Inter,Roboto,sans-serif,Helvetica;
-  }
-  #navleft>div{ 
-    width: 25%;
-   
-  }
-  #navleft{
-  width: 40%;
-    display: flex;
-    justify-content:space-around;
-    margin-left: 20px;
-  }
-  #navleft ul>a{
-    text-decoration: none;
-    color: rgb(49, 47, 47);
-    opacity: 80%;
-    font-weight: bold;
-    /* margin: auto; */
-
-  }
-  #navright{
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 20px;
-  }
-  #navright>div{
-    width: 60%;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  #loginbtn{
-    margin: auto;
-    height: 40px;
-    width:90px ;
-    border-radius:20px;
-    font-size: medium;
-    font-weight: bold;
-    border : 1px rgb(56, 116, 238) solid;
-    color: rgb(56, 116, 238);
-    background-color: white;
-  }
-  #loginbtn:hover{
-    border : 1px rgb(198, 21, 21) solid;
-    color: rgb(198, 21, 21);
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  }
-  #registerbtn:hover{
-    border : 1px rgb(56, 116, 238) solid;
-    color: rgb(255, 255, 255);
-    background-color: rgb(56, 116, 238);
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  }
-  #registerbtn{
-   
-    margin: auto;
-    height: 40px;
-    width:90px ;
-    border-radius:20px;
-    font-size: medium;
-    font-weight: bold;
-    border : 0px rgb(56, 116, 238) solid;
-    color: rgb(255, 255, 255);
-    background-color: rgb(255, 91, 41);
-  }
-  
-  .css-ul{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    opacity: 80%;
-    font-weight: bold;
-  }
-  .css-ul-hover:hover{
-color: blue;
-  }
-  .css-ul-hover-menu:hover{
-
-    color: black;
-    padding: 10px;
-    border-bottom: 4px solid white;
-    border-bottom-color:rgb(56, 116, 238);
-    
-    
-      }
-      .css-ul-hover1-menu:hover{
-
-        color: black;
-        padding: 10px;
-        border-bottom: 4px solid white;
-        border-bottom-color:rgb(238, 112, 16);
-        
-        
-          }
+ 
 
 
 
  /* Search Section  */
  #searchsection{
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
+ text-align: center;
+ margin-bottom: 40px;
+ margin-top: 70px;
  }
  #searchsection>div{
-width: 25%;
+display: flex;
+width: 70%;
+padding: 10px;
+border-radius: 20px;
+margin: auto;
+display: flex;
+justify-content: flex-end;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+margin-top: 40px;
+ }
+ #searchsection select{
+  width: 30%;
+  border: 0px;
+ }
+ #searchsection input{
+ border: 1px solid black;
+  border-right-color: black;
+ }
+ #searchbtn{
+  margin: auto;
+  height: 50px;
+  width:120px ;
+  border-radius:40px;
+  font-size: large;
+
+  
+  border : 0px rgb(56, 116, 238) solid;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 89, 255);
+ }
+ #searchbtn:hover{
+  border :1px solid blue;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 162, 255);
+font-weight: bold;
+ }
+#jobcard{
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  gap : 10px;
+  margin-bottom: 40px;
+}
+ .companydatacard{
+  padding: 0px;
+  display: flex;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 1px solid rgb(189, 230, 255);
+  border-radius: 30px 5px 30px 5px;
+  justify-content: space-evenly;
 
  }
- .cardimg{
-  width: 10%;
+ .companydatacard:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
  }
+ #jobcard>div>img{
+  width: 20%;
+ }
+
 
  /* Company Hiring Section  */
 
@@ -146,77 +93,47 @@ width: 25%;
  /* Grow your Career through Learning   */
 
 /* Video Profile   */
-
- /* Footer   */
-#footer1{
-  font-family: Inter,Roboto,sans-serif,Helvetica;
-  width: 100%;
- display: flex;
- justify-content: space-evenly;
-}
-#f1left{
-  padding-left: 30px;
-  margin-top: 40px;
-  width: 25%;
-  margin-bottom: 30px;
+ #ad{
  
-}
-#f1left>div{
- 
-}
-
-#f1mid{
-  margin-top: 40px;
-  margin-right: 10px;
-  width: 45%;
+background-color: rgb(236, 252, 255);
+border-radius: 20px;
 display: flex;
-justify-content:flex-start;
-margin-bottom: 30px;
-}
-#f1right{
-  margin-top: 40px;
-  width: 30%;
-
-  padding-left: 30px;
-  font-family: Inter,Roboto,sans-serif,Helvetica;
-  margin-bottom: 30px;
-}
-#f1right>div{
-  padding-left: 20px;
- padding-bottom: 20px;
- border: 1px solid black;
- border-radius: 10px;
-}
-#footer2{
-  margin-top: 40px;
-    display: flex;
-    justify-content: space-evenly;
-    
-}
-#footer2>div>img{
-  margin-top: 25px;
-}
-#footer2>div>p{
-  line-height: 10px;
-}
-.footer-link{
-  font-weight: normal;
-  opacity: 100%;
-
-}
-#our_businesses{
-  display: flex;
-}
+margin: auto;
+margin-top: 20px;
+margin-bottom: 40px;
+ }
+ #ad>div{
+  text-align: center;
+  padding: 20px;
+  align-self: center;
+ }
+ #ad>div+div{
+align-self: center;
+ }
 /* THE END  */
 
 
   /* medium screen */
   @media screen and (min-width:480px) and (max-width:720px)  {
-  
+  /* Search Section  */
+  #jobcard{
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap : 10px;   
+  }
  }
 
 /* small screen */
  @media screen    and (min-width:0px) and (max-width:479px) {
-
+/* Search Section  */
+#jobcard{
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap : 10px;
+}
 
 }
