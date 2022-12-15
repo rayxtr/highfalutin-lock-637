@@ -14,6 +14,8 @@ let profile = [{
     },
     experience: "Fresher"
 }];
+
+
 displaydata(profile);
 
 function displaydata(profile) {
@@ -24,6 +26,7 @@ function displaydata(profile) {
     let softskill = document.querySelector("#keyskill");
     let education = document.querySelector("#education");
     let summary = document.querySelector("#projectsummary");
+    
 
 
 
@@ -81,7 +84,7 @@ dv.append(x);
 headline.innerHTML=`
         <h2>Resume Headline <button id="headedit" class="edit"><i class="material-icons">&#xe254;</i></button></h2>
         
-        <p>${el['education'].Other}</p>
+        <input type="text"  readonly  class="value head" value="${el['education'].Other}">
         
 `
 
@@ -91,11 +94,14 @@ roleskil.innerHTML=`
 el["rollskill"].forEach((el)=>{
     let innerdiv = document.createElement("div");
     let li = document.createElement("li");
-    li.innerText=el;
-    innerdiv.append(li);
-    
-    roleskil.append(innerdiv);
-
+    let input =  document.createElement("input");
+   input.className="value mainskill";
+   input.readOnly=true;
+    input.setAttribute("value",`${el}`);
+    li.append(input);
+   innerdiv.append(li);
+    roleskil.append(innerdiv);  
+  
 });
 softskill.innerHTML=`
 <h2>Soft Skill <button id="softedit" class="edit"><i class="material-icons">&#xe254;</i></button</h2>
@@ -103,31 +109,130 @@ softskill.innerHTML=`
 
 el["softskill"].forEach((el)=>{
     let innerdiv = document.createElement("div");
+    
     let li = document.createElement("li");
-    li.innerText=el;
-    innerdiv.append(li);
+   let input =  document.createElement("input");
+   input.className="value softskill";
+    input.readOnly=true;
+    input.setAttribute("value",`${el}`);
+    li.append(input);
+   innerdiv.append(li);
     softskill.append(innerdiv); 
 });
 
 education.innerHTML=`
     <h2>Education <button id="eduedit" class="edit"><i class="material-icons">&#xe254;</i></button></h2>
-   <div> <h3>Post Graduation: </h3>${el.education.PostGraduation}</div>
+   <div> <h3>Post Graduation: </h3><input type="text" id="pg" readonly value="${el.education.PostGraduation}" class="value education"></div>
    <div>
-    <h3>Graduation: </h3>${el.education.Graduation}
+    <h3>Graduation: </h3><input type="text" id="grad" readonly value="${el.education.Graduation}" class="value education">
    </div>
    <div>
-    <h3>Others: </h3>${el.education.Other}
+    <h3>Others: </h3><input type="text" id="oth" readonly value="${el.education.Other}"class="value education">
    </div>
 `
 summary.innerHTML=`
 <h2>Project Summary <button id="summedit" class="edit"><i class="material-icons">&#xe254;</i></button></h2>
+
+<input type="text" readonly value="${el.education.Graduation}" class="value" id="summarychange">
 `
- 
-
-
-    });
+ });
 
 }
 
+let summarybutton = document.querySelector("#summedit");
+summarybutton.addEventListener("click",(e)=>{
+let inp = document.querySelector("#summarychange");
+inp.removeAttribute("readonly");
+inp.style.backgroundColor="gray";
+inp.style.color="white";
+});
 
+let educationedit = document.querySelector("#eduedit");
+
+educationedit.addEventListener("click",(e)=>{
+let allinpu = document.querySelectorAll(".education");
+
+for(x of allinpu){
+    x.removeAttribute("readonly");
+    x.style.backgroundColor="gray";
+    x.style.color="white";
+}
+});
+
+let softskilledit = document.querySelector("#softedit");
+softskilledit.addEventListener("click",()=>{
+    let allinput = document.querySelectorAll(".softskill");
+    for(x of allinput){
+        x.removeAttribute("readonly");
+        x.style.backgroundColor="gray";
+        x.style.color="white";
+    }
+});
+
+
+let mainskilledit = document.querySelector("#roleedit");
+mainskilledit.addEventListener("click",()=>{
+
+    let allinput = document.querySelectorAll(".mainskill");
+
+    for(let x of allinput){
+        x.removeAttribute("readonly");
+        x.style.backgroundColor="gray";
+        x.style.color="white";
+    }
+
+});
+
+let headlinebutton = document.querySelector("#headedit");
+headlinebutton.addEventListener("click",()=>{
+    let inp = document.querySelector(".head");
+    inp.removeAttribute("readonly");
+    inp.style.backgroundColor="gray";
+    inp.style.color="white";
+});
+
+
+let savebutton = document.querySelector("#save");
+savebutton.addEventListener("click",savedata);
+
+function savedata(e){
+e.preventDefault();
+
+let headline= document.querySelector(".head").value;
+
+let allinput1 = document.querySelectorAll(".mainskill");
+let rollskill=[];
+for(x of allinput1){
+    rollskill.push(x.value);
+}
+
+let allinput2 = document.querySelectorAll(".softskill");
+
+let softskill=[];
+for(x of allinput2){
+    softskill.push(x.value);
+
+}
+
+let education={};
+
+let PostGraduation = document.querySelector("#pg").value;
+let Graduation = document.querySelector("#grad").value;
+let Others = document.querySelector("#oth").value;
+
+education.PostGraduation=PostGraduation;
+education.Graduation=Graduation;
+education.Other=Others;
+
+let summary = document.querySelector("#summarychange").value;
+
+let detailobj={
+    headline,rollskill,softskill,education,summary
+}
+
+
+
+
+
+}
 
