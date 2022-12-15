@@ -193,23 +193,103 @@ text-align: center;
 #search_item{
     display: flex;
 }
+#search_btn:hover{
+    cursor: pointer;
+}
+/* company main container data table */
+.table_div{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
+.comp_tbl_head,.maincontainer{
     width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+}
 
+.comp_logo{
+    width: 10%;
+}
+.comp_name{
+    width:30%;
+}
+.job_role{
+    width: 30%;
+}
+.Edit_sec{
+    width: 15%;
+}
+.delet_sec{
+    width: 15%;
+}
+
+.comp_tbl_head div{
+    border: 1px solid black;
+}
+.task, .comp_tbl_head{
+    display:flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.task div{
+    border: 1px solid black;
+}
+.comp_logo img,.profile_pic img{
+    margin-top: 13%;
+    width: 60%;
+    height:60%;
+    border-radius: 5px;
+}
+.Edit_sec button,.delet_sec button{
+    margin-top: 13%;
+    padding: 10px 10px;
+    border: none;
+    color: white;
+    font-weight: bolder;
+    border-radius: 5px;
+    background-color: rgb(75, 112, 215);
+}
+
+
+/* user data css */
+.profile_pic{
+    width: 10%;
+}
+.username{
+    width: 25%;
+}
+.email_id{
+    width: 35%;
+}
+.phone_num{
+    width: 20%;
+}
+.date{
+    width: 20%;
+}
+
+
+@media screen and (min-width:799px) and (max-width:925px){
+    .email_id{
+        width: 45%;
+    }
+    .phone_num{
+        display: none;
+    }
+}
+@media screen and (min-width:0px) and (max-width:798px){
+    .email_id{
+        width: 65%;
+    }
+
+    .phone_num{
+        display: none;
+    }
+    .date{
+        display: none;
+    }
+}
 /* Mediun size scree */
 
 @media screen and (min-width:480px) and (max-width:750px) {
@@ -239,6 +319,7 @@ table {
     #add_page_btn{
         width: 70%;
         display: block;
+       
     }
     
 }
@@ -273,5 +354,21 @@ table {
     #add_page_btn{
         width: 70%;
         display: block;
+    }
+
+    .job_role{
+        display: none;
+    }
+    .comp_logo{
+        width: 20%;
+    }
+    .comp_name{
+        width: 35%;
+    }
+    .Edit_sec{
+        width: 20%;
+    }
+    .delet_sec{
+        width: 30%;
     }
 }
