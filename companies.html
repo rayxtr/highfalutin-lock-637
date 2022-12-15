@@ -1,83 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Companies</title>
-    <link rel="stylesheet" href="companies.css">
+    <link rel="stylesheet" href="companies.css" />
     <script src="companies.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header></header>
 
     <section class="top1">
-        <div>
-            <h1>Top Companies Actively Hiring</h1>
-        </div>
+      <div>
+        <h1>Top Companies Actively Hiring</h1>
+      </div>
     </section>
 
     <main>
-        <section class="top2">
-            <div>
-                <div>
-                    <h2>Manufacturing</h2>
-                    <p>182 Companies  &gt</p>
-                </div>
-                <div>
-                    <h2>Fortune 500</h2>
-                    <p>85 Companies  &gt</p>
-                </div>
-                <div>
-                    <h2>Products</h2>
-                    <p>735 Companies  &gt</p>
-                </div>
-                <div>
-                    <h2>Hospitality</h2>
-                    <p>28 Companies  &gt</p>
-                </div>
-                <div>
-                    <h2>FinTech</h2>
-                    <p>117 Companies  &gt</p>
-                </div>
-            </div>
-        </section>
+      <section class="top2">
+        <div>
+          <div>
+            <h2>Manufacturing</h2>
+            <p>182 Companies &gt</p>
+          </div>
+          <div>
+            <h2>Fortune 500</h2>
+            <p>85 Companies &gt</p>
+          </div>
+          <div>
+            <h2>Products</h2>
+            <p>735 Companies &gt</p>
+          </div>
+          <div>
+            <h2>Hospitality</h2>
+            <p>28 Companies &gt</p>
+          </div>
+          <div>
+            <h2>FinTech</h2>
+            <p>117 Companies &gt</p>
+          </div>
+        </div>
+      </section>
 
-        <section class="mid">
-            <div class="filter">
-                <h2>Filter</h2>
-                <ul>
-                    <li>
-                        <div><h4>Job Role</h4><i class="fa-solid fa-angle-up"></i></div>
-                        <div>
-                            <input type="checkbox">
-                            <input type="checkbox">
-                            <input type="checkbox">
-                            <input type="checkbox">
-                            <input type="checkbox">
-                        </div>
-                    </li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-            <div class="companyList">
-                <h2>Showing 2486 companies</h2>
+      <section class="mid">
+
+        <div class="filter">
+          <h2><i class="fa fa-filter"></i> Filter</h2>
+          <ul>
+            <li id="jobRole">
+              <div>
+                <h4>Job Role</h4>
+                <i class="fa-solid fa-angle-up"></i>
+              </div>
+              <div>
                 <div>
-                    <img src="https://img.naukimg.com/logo_images/groups/v1/3418356.gif" alt="">
-                    <div>
-                        <h2>Company Name</h2>
-                        <p>4.5</p>
-                        <p>Location</p>
-                        <p>Job Role</p>
-                    </div>
+                  <input type="checkbox" value="Front End Developer" />
+                  <label for="">Front End Developer</label>
                 </div>
-            </div>
-        </section>
+                <div>
+                  <input type="checkbox" value="Back End Developer" />
+                  <label for="">Back End Developer</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Full Stack Developer" />
+                  <label for="">Full End Developer</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Field Sales Executive" />
+                  <label for="">Field Sales Executive</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Product Development Engineer" />
+                  <label for="">Product Development Engineer</label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h4>Location</h4>
+                <i class="fa-solid fa-angle-up"></i>
+              </div>
+              <div>
+                <div>
+                  <input type="checkbox" value="Pune" />
+                  <label for="">Pune</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Noida" />
+                  <label for="">Noida</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Mumbai" />
+                  <label for="">Mumbai</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Hyderabad" />
+                  <label for="">Hyderabad</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="chennai" />
+                  <label for="">Chennai</label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h4>Job Role</h4>
+                <i class="fa-solid fa-angle-up"></i>
+              </div>
+              <div>
+                <div>
+                  <input type="checkbox" value="Front End Developer" />
+                  <label for="">Front End Developer</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Back End Developer" />
+                  <label for="">Back End Developer</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Full Stack Developer" />
+                  <label for="">Full End Developer</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Field Sales Executive" />
+                  <label for="">Field Sales Executive</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Product Development Engineer" />
+                  <label for="">Product Development Engineer</label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h4>Job Role</h4>
+                <i class="fa-solid fa-angle-up"></i>
+              </div>
+              <div>
+                <div>
+                  <input type="checkbox" value="Front End Developer" />
+                  <label for="">Front End Developer</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Back End Developer" />
+                  <label for="">Back End Developer</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Full Stack Developer" />
+                  <label for="">Full End Developer</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Field Sales Executive" />
+                  <label for="">Field Sales Executive</label>
+                </div>
+                <div>
+                  <input type="checkbox" value="Product Development Engineer" />
+                  <label for="">Product Development Engineer</label>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="companyList">
+          <h2>Showing 2486 companies</h2>
+          <div id="company-data">
+
+            <!-- <div>
+              <div>
+                <img
+                  src="https://img.naukimg.com/logo_images/groups/v1/3418356.gif"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h3>Company Name</h3>
+                <p><i class="fa-solid fa-star"></i> 4.5</p>
+                <p>Location</p>
+                <p>Job Role</p>
+              </div>
+            </div> -->
+
+            <!-- <div>
+              <div>
+                <img
+                  src="https://img.naukimg.com/logo_images/groups/v1/3418356.gif"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h3>Company Name</h3>
+                <p><i class="fa-solid fa-star"></i> 4.5</p>
+                <p>Location</p>
+                <p>Job Role</p>
+              </div>
+            </div> -->
+
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer></footer>
-</body>
+  </body>
 </html>
-

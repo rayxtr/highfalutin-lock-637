@@ -85,18 +85,26 @@ main {
 
 .mid {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     position: absolute;
     top: 300px;
+    width: 90%;
+    margin: auto 40px;
 }
 
-.filter {
+.fa-filter {
+    font-size: 20px;
+}
+.filter{
     width: 280px;
 }
-.filter h2 {
+.filter h2, .companyList h2 {
     padding-bottom: 20px;
     color: #8292b4;
-    font-size: 24px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 1px;
 }
 .filter ul li {
     border-top: 1px solid #d3e1ea;
@@ -112,16 +120,85 @@ main {
     font-size: 18px;
     line-height: 20px;
 }
-.filter ul li div:last-child{
-    padding: 4px 0;
+.filter ul li>div:last-child {
     margin-top: 14px;
-    max-height: 150px;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
+    max-height: 140px;
+    overflow-y: scroll;
+    scrollbar-width: 1px;
+    position: sticky;
+    top: 20px;
 }
-.filter ul li div:last-child input {
-    border: 1px solid transparent;
+.filter ul li>div:last-child div{
+    padding: 4px 0;
     margin: 6px 0;
-    width: 100%; 
+    display: flex;
+    border: 1px solid transparent;
+    cursor: pointer;
+    width: 95%;
+}
+.filter ul li>div:last-child div input {
+    border: 1px solid transparent;
+}
+.filter ul li>div:last-child div label {
+    margin-left: 6px;
+    font-size: 16px;
+}
+
+.companyList {
+    margin-left: 24px;
+    width: calc(100% - 300px);
+    box-sizing: border-box;
+}
+.companyList h2 {
+    margin-left: 8px;
+}
+.companyList>div {
+    display: grid;
+    grid-template-columns: repeat(2, 450px);
+    gap: 20px;
+}
+.companyList>div>div {
+    padding: 24px;
+    margin-top: 10px;
+    display: flex;
+    border: 1px solid #eaf1f5;
+    border-radius: 20px 4px;
+    box-shadow: 0 4px 10px 0 rgb(0 77 255 / 4%);
+    cursor: pointer;
+    /* width: 60%; */
+}
+.companyList>div>div:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.companyList>div>div>div:first-child{
+    width: 100px;
+    overflow: hidden;
+    height: 80px;
+    border: 1px solid #d3e1ea;
+    border-radius: 4px;
+}
+.companyList>div>div>div:first-child>img {
+    width: 100%;
+    transform: scale(1.05);
+}
+.companyList>div>div>div:last-child {
+    flex-basis: calc(100% - 44px);
+    padding-left: 20px;
+    max-width: calc(100% - 44px);
+}
+.companyList>div>div>div:last-child>h3 {
+    font-weight: 600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 20px;
+    line-height: 24px;
+}
+.companyList>div>div>div:last-child>p {
+    color: #69748d;
+    margin-top: 4px;
+    font-size: 14px;
+}
+.fa-star {
+    color: rgb(255, 221, 0);
 }

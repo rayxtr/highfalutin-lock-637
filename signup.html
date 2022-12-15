@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="https://n.nordstrommedia.com/id/c4fb2a09-3657-4161-9b79-6412897d9399.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <main>
+      <div id="container">
+        <h2>Create Account</h2>
+
+        <p id="login_email"></p>
+
+        <label>FirstName<span style="color: red">*</span></label>
+        <input type="text" id="fname" required />
+        <label>LastName<span style="color: red">*</span></label>
+        <input type="text" id="lname" required />
+        <label for="email">Email<span style="color: red">*</span></label>
+        <input type="email" id="email" required />
+        <label>Create password<span style="color: red">*</span></label>
+        <input type="password" id="password" required />
+
+        <div id="div2">
+          <p>
+            By creating an account, you agree to our
+            <a href="#">Privacy Policy</a>and
+            <a href="#">Terms & Conditions</a>.
+          </p>
+        </div>
+
+        <button id="signup-btn">Create Account</button>
+      </div>
+    </main>
+  </body>
+</html>
+
+<script>
+  document.querySelector("#signup-btn").addEventListener("click", accDataFun);
+
+  function accDataFun() {
+    let fname = document.querySelector("#fname").value;
+    let lname = document.querySelector("#lname").value;
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#password").value;
+
+    let data = {
+      fname,
+      lname,
+      email,
+      password,
+    };
+
+    accData.push(data);
+    localStorage.setItem("accdata", JSON.stringify(accData));
+    setTimeout(() => {
+      window.location.href = "signin.html";
+    }, 2000);
+  }
+</script>
