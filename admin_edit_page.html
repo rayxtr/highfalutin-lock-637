@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job hunbt/Edit data</title>
+    <link rel="stylesheet" href="./admin_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body id="bdy_edit_pge" >
+    <div class="topnav" id="myTopnav">
+        
+        <a href="#home" class="active"><img src="./admin_logo.png" alt=""></a>
+        
+        <a href="#about" class="content">Administrative</a>
+        <a href="#news" class="content">Term of Use</a>
+        <a href="#news" class="content">Visit Our Website</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+    <div id="edit_bar">
+        <button id="edit_pge_btn">Start Editing</button>
+    </div>
+
+    <div class="form_of_editing">
+        <form id="edit_form">
+        <div id="inside_form">
+            <div class="comp_data" id="comp_nme">
+                <label for="compmyName">Company Name : </label>
+                <input type="text" id="company_name" required readonly>
+             </div>
+             <div class="comp_data" id="comp_lgo">
+                <label for="companylogo">URL of Logo : </label>
+             <input type="text" id="company-logo" required readonly>
+             </div>
+             <div class="comp_data" id="job_rle">
+                <label for="jobrole">Job Role : </label>
+                <input type="text" id="company_job_role" required readonly>
+             </div>
+             <div class="comp_data" id="comp_cntct">
+                <label for="contact">Contact : </label>
+                <input type="number" id="company_contact" required readonly>
+             </div>
+             <div class="comp_data" id="comp_exp">
+                <label for="experience">Experience : </label>
+                <input type="text" id="company_exp" required readonly>
+             </div>
+             <div class="comp_data" id="comp_slry">
+                <label for="salary">Salary : </label>
+                <input type="text" id="company_salary" required readonly>
+             </div>
+             <div class="comp_data" id="comp_lct">
+                <label for="location">Loacation : </label>
+                <input type="text" id="company_loca" required readonly>
+             </div>
+             <div class="comp_data" id="comp_desc">
+                <p><label for="description">Description : </label></p>
+                <textarea name="desc" id="company_desc" cols="30" rows="10" required readonly></textarea>
+             </div>
+        </div>
+        <div class="submit_btn">
+            <div class="cancel_btn">
+                <button id="cancel">Cancel</button>
+            </div>
+            <div class="save_btn">
+                <button id="save">Save</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    <script src="./admin_page.js"></script>
+</body>
+</html>
