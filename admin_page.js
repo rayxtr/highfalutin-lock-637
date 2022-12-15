@@ -9,50 +9,63 @@ function myFunction() {
     x.className = "topnav";
   }
 }
-  window.addEventListener("load",(eve
-    )=>{
-        compdata()
-    })
+
+
 
 //append company data
 let dataOpt = document.querySelector("#selectdata");
 dataOpt.addEventListener("change", (event) => {
-  if (dataOpt.value == "company") {
-       compdata()
+  if (dataOpt.value == "company" ||dataOpt.value == "all_data") {
+    compdata()
   } else {
     userdata();
   }
 });
 
-async function compdata() {
+async function compdata(page_limit=10,page_num=1) {
   try {
     let alldata = await fetch(
-      "https://636d633891576e19e327545a.mockapi.io/companies"
-    );
+      `https://636d633891576e19e327545a.mockapi.io/companies?page=${page_num}&limit=${page_limit}`,{
+        method: "GET",
+        headers: {
+              "Content-Type": "application/json", 
+        }
+      });
     if(alldata.ok){
-        let data = await alldata.json();
+     let data = await alldata.json();
     companyData=[...data]
+    let total_page=10
+    renderPaginationButtons(total_page)
     renderCompany(data);
     }
   } catch (error) {
-    alert("bad request");
+    alert("something is wrong");
   }
 }
 
-async function userdata() {
+window.addEventListener("load",(event)=>{
+  compdata()
+})
+
+async function userdata(page_num=1,page_limit=10) {
   try {
     let alldata = await fetch(
-      "https://639a1a15e916a46ec0a9808d.mockapi.io/userdata"
+      `https://639a1a15e916a46ec0a9808d.mockapi.io/userdata?page=${page_num}&limit=${page_limit}`
     );
     if(alldata.ok){
-        let data = await alldata.json();
+    let data = await alldata.json();
     allUserData=[...data]
+    let total_page=10
+    renderPaginationButtons(total_page)
     renderUser(data);
     }
   } catch (error) {
     alert("Bad reqest");
   }
 }
+
+
+
 function renderCompany(data) {
   let tabelCont = document.querySelector(".maincontainer");
   let tabelhead = document.querySelector(".comp_tbl_head");
@@ -89,17 +102,36 @@ function renderCompany(data) {
             <h4>${item.jobRole}</h4>
         </div>
         <div class="Edit_sec">
-            <button clas="edt_btn">Edit Data</button>
+            <button class="edt_btn" data-id=${item.id}>Edit Data</button>
         </div>
         <div class="delet_sec">
-            <button class="dlt_btn">Delete Data</button>
+            <button class="dlt_btn" data-id=${item.id}>Delete Data</button>
         </div>
         
     </div>
     `;
   });
-  tabelCont.innerHTML = newdata.join(" ");
+  tabelCont.innerHTML = newdata.join(" ");    
+  let all_delete_btn = document.querySelectorAll(".dlt_btn");
+      for(let btn of all_delete_btn){
+          btn.addEventListener("click",(event)=>{ 
+			let data_id = event.target.dataset.id;
+			deleteData(data_id)
+		});
+      }
+ 
+
+let all_edit_btn = document.querySelectorAll(".edt_btn");
+      for(let btn of all_edit_btn){
+      btn.addEventListener("click",(event)=>{ 
+      window.location.href="admin_edit_page.html"
+			let data_id = event.target.dataset.id;
+	    console.log(data_id)
+		});
 }
+}
+
+
 
 function renderUser(data) {
   let tabelCont = document.querySelector(".maincontainer");
@@ -152,19 +184,89 @@ function renderUser(data) {
 //search functionality
 let serbtn=document.querySelector("#search_data")
 serbtn.addEventListener("change",(event)=>{
-
     let datashow = document.querySelector("#selectdata");
-    if (datashow.value === "company" ||"all_data") {
-        let showdata=document.querySelector("#search_data").value;
-        if(showdata.length>0){
-            let tempdata=companyData.filter((item)=>{
-                let ans=item.companyName.toLowerCase().includes(showdata.toLowerCase()) || item.jobRole.toLowerCase().includes(showdata.toLowerCase())
-                return ans
-            })
-            renderCompany(tempdata)
-        }else{
-            renderCompany(companyData)
-        }
-        
+    let showdata=document.querySelector("#search_data").value;
+    if (datashow.value === "company" ||datashow.value ==="all_data") {
+        searchComp(showdata)
     }
 })
+
+async function searchComp(data){
+try {
+  let showdata=await fetch(`https://636d633891576e19e327545a.mockapi.io/companies?filter=${data}`)
+  if(showdata.ok){
+    let datatoshow=await showdata.json()
+    renderCompany(datatoshow)
+  }else{
+    alert("Data not found")
+  }
+} catch (error) {
+  alert("the requst request")
+}
+}
+
+//Deletion part
+
+async function deleteData(id){
+	try {
+		let delete_request = await fetch(`https://636d633891576e19e327545a.mockapi.io/companies/${id}`,{
+            method : "DELETE",
+        });
+        if(delete_request.ok){
+          alert("Data deleted successfully")
+		        compdata(10)  
+        }else{
+          alert("Data Not Deleted")
+        }
+	}
+	
+	catch (error) {
+		alert("You don't have access.")	
+	}
+}
+// PAGINTAION PART
+
+let paginationWrapper = document.querySelector("#pagination-wrapper");
+
+function renderPaginationButtons(total_pages){
+    paginationWrapper.innerHTML = `
+      <div className="pagination-btn-list">
+	  ${CreatePagButton(total_pages).join(" ")}
+      </div>
+    `;
+    // handle click of pagination-btn(s)
+    let paginationButtons =  document.querySelectorAll('.pagination-btn');
+    for (let paginationButton of paginationButtons) {
+      paginationButton.addEventListener('click', function(e){
+        let page_number = e.target.dataset.id;
+		    let page_limit = 10
+        let getdata=document.querySelector("#selectdata").value;
+        if (getdata === "all_data"){
+          compdata(page_limit,page_number);
+        }
+        if( getdata==="company"){
+          compdata(page_number,page_limit);
+        }
+        if(getdata=="user"){
+          userdata(page_limit,page_number)
+        }
+        
+      })
+    }
+  }
+
+
+
+
+function getAsButton(text, cls, dataId ) {
+	return `<button class="${cls}" ${dataId ? `data-id = ${dataId}` : ''} >${text}</button>`
+}
+
+function CreatePagButton(total_page){
+   let array = [];
+   for(let page=1; page<=total_page;page++){
+   	array.push(getAsButton(page,"pagination-btn",page))
+   }
+   return array;
+}
+
