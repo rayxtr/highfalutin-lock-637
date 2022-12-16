@@ -293,9 +293,26 @@ text-align: center;
     border-radius: 5px;
 }
 /* Edit page css */
+#bdy_edit_pge{
+    background-color:rgb(224, 228, 240);
+}
+#myTopnav{
+    background-color: white;
+}
 #edit_bar{
     text-align: center;
     margin-top: 25px;
+}
+#add_bar{
+    width: 20%;
+    margin: auto;
+    text-align: center;
+    background-color:rgb(75, 112, 215) ;
+    color: white;
+    padding: 10px ;
+    font-size: 15px;
+    font-weight: bolder;
+    border-radius: 8px;
 }
 #edit_pge_btn{
     padding: 10px 15px;
@@ -314,7 +331,10 @@ text-align: center;
     margin: auto;
     padding: 30px;
     margin-top: 25px;
-    background-color: rgb(191, 191, 233);
+    background-color: rgb(209, 209, 241);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 50px;
 }
 .comp_data{
     display: grid;
@@ -331,23 +351,119 @@ text-align: center;
     padding: 10px;
 }
 .submit_btn{
+    width: 90%;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    margin-top: 20px;
+    margin-top: 10%;
     row-gap: 10px;
+    text-align: center;
 }
 .submit_btn div button{
-    padding: 10px 40%;
+    padding: 10px 35%;
+    background-color: rgb(75, 112, 215);
+    border: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    border-radius: 8px;
 }
-/* @media screen and (min-width:500px) and (max-width:925px){
+.submit_btn div button:hover{
+    background-color: rgb(93, 129, 228);
+}
+#cancel a{
+    color: white;
+    text-decoration: none;
+}
+@media screen and (min-width:0px) and (max-width:399px){
     .form_of_editing{
         width: 60%;
+    }
+    .comp_data{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: auto;
+        margin: 4px;
+    }
+    .comp_data label{
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .comp_data input{
+        padding: 5px;
+    }
+    .submit_btn{
+        grid-template-columns: repeat(1,1fr);
+        column-gap: 5px;
+    }
+    .submit_btn div button{
+        padding: 10px 30px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    #add_bar{
+        width: 50%;
+    }
+
+}
+@media screen and (min-width:400px) and (max-width:899px){
+    .form_of_editing{
+        width: 60%;
+    }
+    .comp_data{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: auto;
+        margin: 6px;
     }
     .comp_data label{
         font-size: 15px;
         font-weight: bold;
     }
-} */
+    .comp_data input{
+        padding: 7px;
+    }
+    .submit_btn{
+        column-gap: 10px;
+    }
+    .submit_btn div button{
+        padding: 10px 30px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width:400px) and (max-width:650px){
+    .submit_btn {
+       grid-template-columns: repeat(1,1fr);
+    }
+}
+@media screen and (min-width:1100px) and (max-width:1400px){
+    .comp_data label{
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .submit_btn{
+        column-gap: 20px;
+    }
+    .submit_btn div button{
+        padding: 10px 60px;
+    }
+}
+@media screen and (min-width:900px) and (max-width:1099px){
+    .comp_data label{
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .submit_btn{
+        column-gap: 10px;
+    }
+    .submit_btn div button{
+        padding: 10px 40px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+}
 @media screen and (min-width:799px) and (max-width:925px){
     .email_id{
         width: 45%;
@@ -355,7 +471,6 @@ text-align: center;
     .phone_num{
         display: none;
     }
-   
 }
 @media screen and (min-width:0px) and (max-width:798px){
     .email_id{
