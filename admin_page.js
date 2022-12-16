@@ -13,11 +13,11 @@ function myFunction() {
 
 
 //append company data
-let dataOpt = document.querySelector("#selectdata");
-dataOpt.addEventListener("change", (event) => {
-  if (dataOpt.value == "company" ||dataOpt.value == "all_data") {
+let datatemp = document.querySelector("#selectdata");
+datatemp.addEventListener("change", (event) => {
+  if (datatemp.value === "company" ) {
     compdata()
-  } else {
+  } else if (datatemp.value === "user" ) {
     userdata();
   }
 });
@@ -47,7 +47,7 @@ window.addEventListener("load",(event)=>{
   compdata()
 })
 
-async function userdata(page_num=1,page_limit=10) {
+async function userdata(page_limit=10,page_num=1) {
   try {
     let alldata = await fetch(
       `https://639a1a15e916a46ec0a9808d.mockapi.io/userdata?page=${page_num}&limit=${page_limit}`
@@ -116,7 +116,8 @@ function renderCompany(data) {
       for(let btn of all_delete_btn){
           btn.addEventListener("click",(event)=>{ 
 			let data_id = event.target.dataset.id;
-			deleteData(data_id)
+      let page_temp=Math.ceil(data_id/10)
+			deleteData(data_id,page_temp)
 		});
       }
  
@@ -124,11 +125,12 @@ function renderCompany(data) {
 let all_edit_btn = document.querySelectorAll(".edt_btn");
       for(let btn of all_edit_btn){
       btn.addEventListener("click",(event)=>{ 
-      window.location.href="admin_edit_page.html"
-			let data_id = event.target.dataset.id;
-	    console.log(data_id)
+        let data_id = event.target.dataset.id;
+	      localStorage.setItem("editId",data_id)
+        window.location.href="admin_edit_page.html"
 		});
 }
+
 }
 
 
@@ -187,7 +189,12 @@ serbtn.addEventListener("change",(event)=>{
     let datashow = document.querySelector("#selectdata");
     let showdata=document.querySelector("#search_data").value;
     if (datashow.value === "company" ||datashow.value ==="all_data") {
+      if(serbtn.value.length>0){
         searchComp(showdata)
+      }else{
+        compdata()
+      }
+        
     }
 })
 
@@ -207,14 +214,14 @@ try {
 
 //Deletion part
 
-async function deleteData(id){
+async function deleteData(id,page){
 	try {
 		let delete_request = await fetch(`https://636d633891576e19e327545a.mockapi.io/companies/${id}`,{
             method : "DELETE",
         });
         if(delete_request.ok){
           alert("Data deleted successfully")
-		        compdata(10)  
+		        compdata(10,page)  
         }else{
           alert("Data Not Deleted")
         }
@@ -224,6 +231,7 @@ async function deleteData(id){
 		alert("You don't have access.")	
 	}
 }
+
 // PAGINTAION PART
 
 let paginationWrapper = document.querySelector("#pagination-wrapper");
@@ -245,7 +253,7 @@ function renderPaginationButtons(total_pages){
           compdata(page_limit,page_number);
         }
         if( getdata==="company"){
-          compdata(page_number,page_limit);
+          compdata(page_limit,page_number);
         }
         if(getdata=="user"){
           userdata(page_limit,page_number)
@@ -270,3 +278,9 @@ function CreatePagButton(total_page){
    return array;
 }
 
+let add_btn=document.querySelector("#add_page_btn")
+add_btn.addEventListener("click",(event)=>{
+  localStorage.removeItem("editId")
+  window.location.href="admin_edit_page.html"
+
+})
