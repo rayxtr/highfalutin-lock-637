@@ -1,23 +1,30 @@
-let fetchURL = "https://636d633891576e19e327545a.mockapi.io/companies?page=1&limit=10";
+let fetchURL = "https://636d633891576e19e327545a.mockapi.io/companies";
 
 let companyData = document.querySelector(".companyList>div");
 
 let arr = [];
 // fetch company data
-async function fetchData() {
-    let res = await fetch(fetchURL);
+async function fetchData(pageNumber = 1) {
+  try {
+    let res = await fetch(`${fetchURL}?page=${pageNumber}&limit=16`);
     let data = await res.json();
-    arr = data
+    arr = data;
     renderData(arr);
+    let totalPage = 5;
+    paginationData(totalPage);
+  } catch (err) {
+    alert("Error Occurred");
+  }
 }
 
 fetchData();
 
 function renderData(comData) {
-    // render data
-    companyData.innerHTML = "";
-    companyData.innerHTML = comData.map((item) => {
-        return `
+  // render data
+  companyData.innerHTML = "";
+  companyData.innerHTML = comData
+    .map((item) => {
+      return `
             <div class="combox" data-id=${item.id}>
                 <div>
                     <img
@@ -32,62 +39,77 @@ function renderData(comData) {
                     <p>${item.jobRole}</p>
                 </div>
             </div>
-        `
-    }).join(" ");
+        `;
+    })
+    .join(" ");
 
-    // company detail
-    let comboxes = document.querySelectorAll(".combox");
-    for(let combox of comboxes) {
-        combox.addEventListener("click", (event)=> {
-            for(let i=0; i<comData.length; i++) {
-                if(comData[i].id === combox.dataset.id) {
-                    localStorage.setItem("detailCompany", JSON.stringify(comData[i]));
-                    window.location.href = "#";
-                }
-            }
-        })
-    }
-
+  // company detail
+  let comboxes = document.querySelectorAll(".combox");
+  for (let combox of comboxes) {
+    combox.addEventListener("click", (event) => {
+      for (let i = 0; i < comData.length; i++) {
+        if (comData[i].id === combox.dataset.id) {
+          localStorage.setItem("detailCompany", JSON.stringify(comData[i]));
+          window.location.href = "com_detail.html";
+        }
+      }
+    });
+  }
 }
 
 // filterPart
-let inputButtons = document.querySelectorAll("#jobRole input");
-for(let inputButton of inputButtons) {
-    inputButton.addEventListener("change", (event)=> {
-        // if(inputButton.checked = "") {
-            // inputButton.removeAttribute("checked");    
-        // }
-        // inputButton.setAttribute(""checked, "");
-        // console.log(inputButton.value)
+let inputJobButtons = document.querySelectorAll("#jobRole input");
+for (let inputButton of inputJobButtons) {
+  inputButton.addEventListener("click", (event) => {
+    // inputButton.setAttribute("checked", "");
+    let inputValue = inputButton.value;
+    let filteredComp = arr.filter((item) => {
+      let x = item.jobRole;
+      return item.jobRole === inputValue;
+    });
 
-        let inputValue = inputButton.value;
-
-        // if(inputButton.checked !== "") {
-        //     console.log("YES")
-        // }
-
-        let filteredComp = arr.filter((item)=> {
-            let x = item.jobRole;
-            let isFilter = true;
-            for(let i=0; i<x.length; i++) {
-                for(let j=0; j<inputValue.length; j++) {
-                    if(x[i] !== inputValue[j]) {
-                        isFilter = false;
-                        break;
-                    }
-                }
-            }
-            
-        })
-        // for(let i=0; i<arr[i].jobRole.length; i++) {
-        //     for(let j=0; j<inputButton.value.length; j++) {
-        //         if()
-        //     }
-        // }
-    })
+    renderData(filteredComp);
+  });
 }
 
+let inputLocationButtons = document.querySelectorAll("#location input");
+for (let inputButton of inputLocationButtons) {
+  inputButton.addEventListener("click", (event) => {
+    let inputValue = inputButton.value;
+    let filteredComp = arr.filter((item) => {
+      let x = item.location;
+      return item.location === inputValue;
+    });
 
-
+    renderData(filteredComp);
+  })
+}
 
 // Pagination part
+function paginationData(totalPage) {
+  let paginationSection = document.querySelector(".pagination");
+  paginationSection.innerHTML = `
+    ${createPagButton(totalPage).join(" ")}
+  `;
+
+  let pageButtons = document.querySelectorAll(".pagination-btn");
+  for (let pageButton of pageButtons) {
+    pageButton.addEventListener("click", (event) => {
+      let pageNumber = event.target.dataset.id;
+      let limti = 16;
+      fetchData(pageNumber);
+    });
+  }
+}
+
+function createPagButton(totalPage) {
+  let array = [];
+  for (let page = 1; page <= totalPage; page++) {
+    array.push(
+      `<div class="pagination-btn" ${page ? `data-id = ${page}` : ""}><h4 ${
+        page ? `data-id = ${page}` : ""
+      }>${page}</h4></div>`
+    );
+  }
+  return array;
+}
