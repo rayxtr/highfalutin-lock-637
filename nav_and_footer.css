@@ -6,24 +6,25 @@
    
     position: sticky;
     top: 0;
+    z-index: 9999;
     width: 100%;;
     height: auto;
     margin: auto;
-    display: flex;
-    justify-content:space-between;
+   display: grid;
+    grid-template-columns: repeat(2,1fr);
     padding: 5px;
     background-color: white;
     font-family: Inter,Roboto,sans-serif,Helvetica;
   }
   #navleft>div{ 
-    width: 25%;
+    width: 120px;
    
   }
   #navleft{
-  width: 40%;
+  
     display: flex;
     justify-content:space-around;
-    margin-left: 20px;
+    margin-left: 10px;
   }
   #navleft ul>a{
     text-decoration: none;
@@ -34,7 +35,7 @@
 
   }
   #navright{
-    width: 50%;
+
     display: flex;
     justify-content: flex-end;
     margin-right: 20px;
@@ -137,14 +138,12 @@ color: blue;
   }
   #f1left{
     padding-left: 30px;
-    margin-top: 40px;
+    margin-top: 30px;
     width: 25%;
     margin-bottom: 30px;
    
   }
-  #f1left>div{
-   
-  }
+
   
   #f1mid{
     margin-top: 40px;
@@ -155,7 +154,7 @@ color: blue;
   margin-bottom: 30px;
   }
   #f1right{
-    margin-top: 40px;
+    margin-top: 30px;
     width: 30%;
   
     padding-left: 30px;
@@ -169,7 +168,7 @@ color: blue;
    border-radius: 10px;
   }
   #footer2{
-    margin-top: 40px;
+    margin-top: 30px;
       display: flex;
       justify-content: space-evenly;
       
@@ -189,12 +188,63 @@ color: blue;
     display: flex;
   }
 
+/* dropdown  */
+#job{
+  position: relative;
+  }
+  #job:hover .jobclass{
+  display: block;
+  }
+  .jobclass>div{
+  width: 700px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 30px;
+  position: absolute;
+  
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 40px;
+  left: 0;
+  top: 30px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  
+  }.jobclass a{
+  text-decoration: none;
+  color: rgb(91, 89, 89);
+  }
+  .jobclass>div>div{
+  border-right: 1px solid rgb(191, 189, 189);
+  padding: 10px;
+  padding-top: 0px;
+  }
+  .jobclass>div>div>h4{
+  margin-top: 0px;
+  }
+  .jobclass>div>div:nth-child(4){
+  border-right: 0px solid rgb(133, 132, 132);
+  }
+  .jobclass>div>div>div{
+  padding: 5px;
+  }
+  .jobclass>div{
+  padding: 30px;
+  }
+  
+  .jobclass{
+  display: none;
+  }
+
+
+
  /* medium screen */
   @media screen and (min-width:480px) and (max-width:720px)  {
     
-     #navleft ul{
+     #navleft>div{
       display: none;
      } 
+
   }
 
   /* small screen */

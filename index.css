@@ -62,6 +62,7 @@ font-weight: bold;
   grid-template-columns: repeat(6,1fr);
   gap : 10px;
   margin-bottom: 40px;
+  margin-top: 60px;
 }
  .companydatacard{
   padding: 0px;
@@ -81,17 +82,203 @@ font-weight: bold;
 
 
  /* Company Hiring Section  */
+ #btnleft{
+position: absolute;
+top: 45%;
+left: -32px;
+border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  color: #69748d;
+ }
+ #btnright{
+  position: absolute;
+  top: 45%;
+  left :98% ;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  color: #69748d;
+
+ }
+ .companyList {
+  border: 1px solid black;
+ position: relative;
+  width: calc(100% );
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin-top: 80;
+}
+.companyList h1{
+  text-align: center;
+}
+#displaycompany {
+ width: 100%;
+ display: flex;
+ overflow-x: hidden;
+ gap: 30px;
+ margin-bottom: 50px;
+}
+.companyList>div>div {
+  padding: 24px;
+  margin-top: 10px;
+  display: flex;
+  border: 1px solid #eaf1f5;
+  border-radius: 20px 4px;
+  box-shadow: 0 4px 10px 0 rgb(0 77 255 / 4%);
+  cursor: pointer;
+   height: fit-content;
+}
+.companyList>div>div:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.companyList>div>div>div:first-child{
+  width: 100px;
+  overflow: hidden;
+  height: 80px;
+  border: 1px solid #d3e1ea;
+  border-radius: 4px;
+}
+.companyList>div>div>div:first-child>img {
+  width: 100%;
+  transform: scale(1.05);
+}
+.companyList>div>div>div:last-child {
+  flex-basis: calc(100% - 44px);
+  padding-left: 20px;
+  max-width: calc(100% - 44px);
+}
+.companyList>div>div>div:last-child>h3 {
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 20px;
+  line-height: 24px;
+}
+.companyList>div>div>div:last-child>p {
+  color: #69748d;
+  margin-top: 4px;
+  font-size: 14px;
+}
+.fa-star {
+  color: rgb(255, 221, 0);
+}
 
  /* Featured Companies  */
+
+#featuredcompany{
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+#featurebtn{
+  
+  width: 20%;
+  margin: auto;
+ text-align: center;
+ display: flex;
+ justify-content: space-evenly;
+}
+#featurebtn>div{
+  border-radius: 20px;
+  padding: 5px;
+  border: 1px solid orangered;
+  width: fit-content;
+  color: gray;
+  
+}
+#featurebtn>div:hover{
+  border: 1px solid orangered;
+  background-color: #f6ae6a;
+  color: rgb(0, 0, 0);
+  
+}
+#featureslide{
+  margin-top: 20px;
+  border: 1px solid black;
+  width: 100%;
+  height: 350px;
+}
 
  /* Job Across Popular roles  */
 
  /* Sponsered Companies   */ 
 
  /* Interview Prepration Section   */
+#interview{
+ display: grid;
+ grid-template-columns: repeat(3,1fr);
+ gap: 30px;
+ margin-top: 60px;
+ margin-bottom: 120px;
+
+}
+#interviewcard1{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 20px;
+  border-radius: 20px;
+}
+#interviewcard1>div{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+
+  
+}
+#interviewcard1>div>div{
+display: flex;
+justify-content: space-evenly;
+padding: 10px;
+border-radius: 10px;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#interviewcard2{
+
+}
+
+
+
 
  /* Grow your Career through Learning   */
+#career{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+.careerdiv{
+  border: 1px solid rgb(92, 203, 255);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 10px;
+}
+.careerdiv:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.careerimg>div{
+  padding: 5px;
+  width: 50%;
+  border: 1px solid rgb(92, 203, 255);
+  border-radius: 8px;
+  color: rgb(3, 13, 195);
+  background-color:rgb(160, 178, 238) ;
 
+}
+.careerdiv>p{
+  color: #69748d;
+  line-height: 25px;
+}
+.careerdiv>button{
+  color: #69748d;
+  padding: 3px;
+  border-radius: 10px;
+  border: 1px solid rgb(74, 74, 74);
+  background-color: rgb(255, 255, 255);
+
+}
 /* Video Profile   */
  #ad{
  
@@ -99,8 +286,8 @@ background-color: rgb(236, 252, 255);
 border-radius: 20px;
 display: flex;
 margin: auto;
-margin-top: 20px;
-margin-bottom: 40px;
+margin-top: 40px;
+margin-bottom: 80px;
  }
  #ad>div{
   text-align: center;
