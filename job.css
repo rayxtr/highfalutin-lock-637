@@ -1,0 +1,345 @@
+.box-shdow{ 
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+   
+   }
+   #nav{
+     position: sticky;
+     top: 0;
+     z-index: 9999;
+     width: 100%;;
+     height: auto;
+     margin: auto;
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+     padding: 5px;
+     background-color: white;
+     font-family: Inter,Roboto,sans-serif,Helvetica;
+   }
+   #navleft>div{ 
+     width: 120px;
+   }
+   #navleft{
+     display: flex;
+     justify-content:space-around;
+     margin-left: 10px;
+   }
+   #navleft ul>a{
+     text-decoration: none;
+     color: rgb(49, 47, 47);
+     opacity: 80%;
+     font-weight: bold;
+     /* margin: auto; */
+ 
+   }
+   #navright{
+   display: flex;
+   flex-direction: row-reverse;
+   margin-left: 90px;
+   }
+   
+   #navright>div{
+     width: 60%;
+     display: flex;
+     justify-content: flex-end;
+   }
+  
+   #logout{
+     margin: auto;
+     height: 40px;
+     width:90px ;
+     border-radius:20px;
+     font-size: medium;
+     font-weight: bold;
+     border : 0px rgb(56, 116, 238) solid;
+     color: rgb(255, 255, 255);
+     background-color: rgb(255, 91, 41);
+   }
+   #logout:hover{
+     border : 1px rgb(56, 116, 238) solid;
+     color: rgb(255, 255, 255);
+     background-color: rgb(56, 116, 238);
+     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+   }
+   #profile img:hover{
+   
+    box-shadow: rgba(245, 83, 83, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  }
+  #profile img{
+    border-radius: 50%;
+    
+  }
+ 
+ 
+   
+   .css-ul{
+     text-decoration: none;
+     color: rgb(0, 0, 0);
+     opacity: 80%;
+     font-weight: bold;
+   }
+   .css-ul-hover:hover{
+ color: blue;
+   }
+   .css-ul-hover-menu:hover{
+ 
+     color: black;
+     
+     border-bottom: 4px solid white;
+     border-bottom-color:rgb(56, 116, 238);
+     
+     
+       }
+       .css-ul-hover1-menu:hover{
+ 
+         color: black;
+        
+         border-bottom: 4px solid white;
+         border-bottom-color:rgb(238, 112, 16);
+         
+         
+           }
+ 
+          #navleft ul li{
+             list-style-type: none;
+             float: left;
+             width: 120px;
+          } 
+ 
+ 
+ 
+ 
+ 
+   /* Footer   */
+ #footer1{
+     font-family: Inter,Roboto,sans-serif,Helvetica;
+     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+   }
+   #f1left{
+     padding-left: 30px;
+     margin-top: 30px;
+     width: 25%;
+     margin-bottom: 30px;
+    
+   }
+ 
+   
+   #f1mid{
+     margin-top: 40px;
+     margin-right: 10px;
+     width: 45%;
+   display: flex;
+   justify-content:flex-start;
+   margin-bottom: 30px;
+   }
+   #f1right{
+     margin-top: 30px;
+     width: 30%;
+   
+     padding-left: 30px;
+     font-family: Inter,Roboto,sans-serif,Helvetica;
+     margin-bottom: 30px;
+   }
+   #f1right>div{
+     padding-left: 20px;
+    padding-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+   }
+   #footer2{
+     margin-top: 30px;
+       display: flex;
+       justify-content: space-evenly;
+       
+   }
+   #footer2>div>img{
+     margin-top: 25px;
+   }
+   #footer2>div>p{
+     line-height: 10px;
+   }
+   .footer-link{
+     font-weight: normal;
+     opacity: 100%;
+   
+   }
+   #our_businesses{
+     display: flex;
+   }
+ 
+ /* dropdown  */
+ #job{
+   position: relative;
+   }
+   #job:hover .jobclass{
+   display: block;
+   }
+   .jobclass>div{
+   width: 700px;
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   gap: 30px;
+   position: absolute;
+   border-radius: 10px;
+   padding: 20px;
+   margin-right: 40px;
+   left: 0;
+   top: 20px;
+   background-color:rgb(254, 245, 245);
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+   
+   }.jobclass a{
+   text-decoration: none;
+   color: rgb(91, 89, 89);
+   }
+   .jobclass>div>div{
+   border-right: 1px solid rgb(191, 189, 189);
+   padding: 10px;
+   padding-top: 0px;
+   }
+   .jobclass>div>div>h4{
+   margin-top: 0px;
+   }
+   .jobclass>div>div:nth-child(4){
+   border-right: 0px solid rgb(133, 132, 132);
+   }
+   .jobclass>div>div>div{
+   padding: 5px;
+   }
+   .jobclass>div{
+   padding: 30px;
+   }
+   
+   .jobclass{
+   display: none;
+   }
+ 
+   #company{
+     position: relative;
+     }
+   #company:hover .companyclass{
+     display: block;
+     }
+     .companyclass>div{
+     width: 700px;
+     display: grid;
+     grid-template-columns: repeat(3,1fr);
+     gap: 30px;
+     position: absolute;
+     
+     border-radius: 10px;
+     padding: 20px;
+     margin-right: 40px;
+    
+     top: 20px;
+     background-color: rgb(254, 245, 245);
+     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+     
+     }.companyclass a{
+     text-decoration: none;
+     color: rgb(91, 89, 89);
+     }
+     .companyclass>div>div{
+     border-right: 1px solid rgb(191, 189, 189);
+     padding: 10px;
+     padding-top: 0px;
+     }
+     .companyclass>div>div>h4{
+     margin-top: 0px;
+     }
+     .companyclass>div>div:nth-child(3){
+     border-right: 0px solid rgb(133, 132, 132);
+     }
+     .companyclass>div>div>div{
+     padding: 5px;
+     }
+     .companyclass>div{
+     padding: 30px;
+     }
+     
+     .companyclass{
+     display: none;
+     }
+     #service{
+       position: relative;
+       }
+     #service:hover .serviceclass{
+       display: block;
+       }
+       .serviceclass>div{
+       width: 700px;
+       display: grid;
+       grid-template-columns: repeat(4,1fr);
+       gap: 30px;
+       position: absolute;
+       left: 0px;
+       border-radius: 10px;
+       padding: 20px;
+       margin-right: 40px;
+      
+       top: 20px;
+       background-color: rgb(254, 245, 245);
+       box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+       
+       }.serviceclass a{
+       text-decoration: none;
+       color: rgb(91, 89, 89);
+       }
+       .serviceclass>div>div{
+       border-right: 1px solid rgb(191, 189, 189);
+       padding: 10px;
+       padding-top: 0px;
+       }
+       .serviceclass>div>div>h4{
+       margin-top: 0px;
+       }
+       .serviceclass>div>div:nth-child(4){
+       border-right: 0px solid rgb(133, 132, 132);
+       }
+       .serviceclass>div>div>div{
+       padding: 5px;
+       }
+       .serviceclass>div{
+       padding: 30px;
+       }
+       
+       .serviceclass{
+       display: none;
+       }
+ 
+ /* admin */
+ 
+ #adminlogin{
+   position: absolute;
+   margin-top: 3px;
+   border-radius: 10px;
+   padding: 20px;
+   margin-right: 40px;
+   background-color: white;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+   display: none;
+ }
+ #adminlogin a{
+   text-decoration: none;
+   color: black;
+ }
+ #adminhov:hover #adminlogin{
+ display: block;
+ }
+ 
+ 
+  /* medium screen */
+   @media screen and (min-width:480px) and (max-width:720px)  {
+     
+      #navleft>div{
+       display: none;
+      } 
+ 
+   }
+ 
+   /* small screen */
+  @media screen    and (min-width:0px) and (max-width:479px) {
+ 
+ 
+  }
