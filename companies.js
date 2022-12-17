@@ -61,28 +61,43 @@ function renderData(comData) {
 let inputJobButtons = document.querySelectorAll("#jobRole input");
 for (let inputButton of inputJobButtons) {
   inputButton.addEventListener("click", (event) => {
-    // inputButton.setAttribute("checked", "");
+    inputButton.setAttribute("checked", false);
+    if (inputButton.checked) {
+      inputButton.setAttribute("checked", true);
+    }
+
     let inputValue = inputButton.value;
     let filteredComp = arr.filter((item) => {
-      let x = item.jobRole;
       return item.jobRole === inputValue;
     });
 
-    renderData(filteredComp);
+    if (inputButton.checked) {
+      renderData(filteredComp);
+    } else {
+      renderData(arr);
+    }
   });
 }
 
 let inputLocationButtons = document.querySelectorAll("#location input");
 for (let inputButton of inputLocationButtons) {
   inputButton.addEventListener("click", (event) => {
+    inputButton.setAttribute("checked", false);
+    if (inputButton.checked) {
+      inputButton.setAttribute("checked", true);
+    }
+
     let inputValue = inputButton.value;
     let filteredComp = arr.filter((item) => {
-      let x = item.location;
       return item.location === inputValue;
     });
 
-    renderData(filteredComp);
-  })
+    if (inputButton.checked) {
+      renderData(filteredComp);
+    } else {
+      renderData(arr);
+    }
+  });
 }
 
 // Pagination part
@@ -96,7 +111,7 @@ function paginationData(totalPage) {
   for (let pageButton of pageButtons) {
     pageButton.addEventListener("click", (event) => {
       let pageNumber = event.target.dataset.id;
-      let limti = 16;
+      // let limti = 16;
       fetchData(pageNumber);
     });
   }
@@ -112,4 +127,39 @@ function createPagButton(totalPage) {
     );
   }
   return array;
+}
+
+// hiringPart.nextElementSibling.children[0].classList.toggle("active");
+
+let hiringParts = document.querySelectorAll(".hiring-part h3");
+
+// for(let i=0; i<hiringParts.length; i++) {
+//   hiringParts[i].addEventListener("click",function(event){
+//     let main = hiringParts[i].nextElementSibling;
+
+//     if(main.style.display == "grid") {
+//       main.style.display = "none";
+//     } else {
+//       main.style.display = "grid";
+//     }
+//   })
+// }
+
+for (let i = 0; i < hiringParts.length; i++) {
+  hiringParts[0].nextElementSibling.style.display = "block";
+  hiringParts[i].addEventListener("click", function () {
+    if (i == 0) {
+      hiringParts[0].nextElementSibling.style.display = "block";
+      hiringParts[1].nextElementSibling.style.display = "none";
+      hiringParts[2].nextElementSibling.style.display = "none";
+    } else if (i == 1) {
+      hiringParts[1].nextElementSibling.style.display = "block";
+      hiringParts[0].nextElementSibling.style.display = "none";
+      hiringParts[2].nextElementSibling.style.display = "none";
+    } else if (i == 2) {
+      hiringParts[2].nextElementSibling.style.display = "block";
+      hiringParts[0].nextElementSibling.style.display = "none";
+      hiringParts[1].nextElementSibling.style.display = "none";
+    }
+  });
 }
