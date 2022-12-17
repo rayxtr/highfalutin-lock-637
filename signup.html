@@ -54,7 +54,8 @@
     let lname = document.querySelector("#lname").value;
     let email = document.querySelector("#email").value;
     let password = document.querySelector("#password").value;
-
+     
+    let accData = []
     let data = {
       fname,
       lname,
@@ -65,7 +66,8 @@
     accData.push(data);
     localStorage.setItem("accdata", JSON.stringify(accData));
     setTimeout(() => {
+       alert("User account created Successfuly")
       window.location.href = "signin.html";
-    }, 2000);
+    }, 0);
   }
 </script>

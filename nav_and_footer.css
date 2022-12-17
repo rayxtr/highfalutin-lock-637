@@ -40,6 +40,7 @@
     justify-content: flex-end;
     margin-right: 20px;
   }
+  
   #navright>div{
     width: 60%;
     display: flex;
@@ -80,6 +81,24 @@
     color: rgb(255, 255, 255);
     background-color: rgb(255, 91, 41);
   }
+  #logout{
+    margin: auto;
+    height: 40px;
+    width:90px ;
+    border-radius:20px;
+    font-size: medium;
+    font-weight: bold;
+    border : 0px rgb(56, 116, 238) solid;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 91, 41);
+  }
+  #logout:hover{
+    border : 1px rgb(56, 116, 238) solid;
+    color: rgb(255, 255, 255);
+    background-color: rgb(56, 116, 238);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
   
   .css-ul{
     text-decoration: none;
@@ -93,7 +112,7 @@ color: blue;
   .css-ul-hover-menu:hover{
 
     color: black;
-    padding: 10px;
+    
     border-bottom: 4px solid white;
     border-bottom-color:rgb(56, 116, 238);
     
@@ -102,7 +121,7 @@ color: blue;
       .css-ul-hover1-menu:hover{
 
         color: black;
-        padding: 10px;
+       
         border-bottom: 4px solid white;
         border-bottom-color:rgb(238, 112, 16);
         
@@ -115,17 +134,7 @@ color: blue;
             width: 120px;
          } 
 
-  /* Dropdown css */
- .dropdown{
-    width: 70%;
-    margin: auto;
-    display: flex;
-    z-index: 1;
-    border: 1px solid black;
-    border-radius: 10px;
-    display: none;
- }
- 
+
 
 
 
@@ -201,13 +210,12 @@ color: blue;
   grid-template-columns: repeat(4,1fr);
   gap: 30px;
   position: absolute;
-  
   border-radius: 10px;
   padding: 20px;
   margin-right: 40px;
   left: 0;
-  top: 30px;
-  background-color: white;
+  top: 20px;
+  background-color:rgb(254, 245, 245);
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   
   }.jobclass a{
@@ -236,6 +244,118 @@ color: blue;
   display: none;
   }
 
+  #company{
+    position: relative;
+    }
+  #company:hover .companyclass{
+    display: block;
+    }
+    .companyclass>div{
+    width: 700px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    position: absolute;
+    
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 40px;
+   
+    top: 20px;
+    background-color: rgb(254, 245, 245);
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    
+    }.companyclass a{
+    text-decoration: none;
+    color: rgb(91, 89, 89);
+    }
+    .companyclass>div>div{
+    border-right: 1px solid rgb(191, 189, 189);
+    padding: 10px;
+    padding-top: 0px;
+    }
+    .companyclass>div>div>h4{
+    margin-top: 0px;
+    }
+    .companyclass>div>div:nth-child(3){
+    border-right: 0px solid rgb(133, 132, 132);
+    }
+    .companyclass>div>div>div{
+    padding: 5px;
+    }
+    .companyclass>div{
+    padding: 30px;
+    }
+    
+    .companyclass{
+    display: none;
+    }
+    #service{
+      position: relative;
+      }
+    #service:hover .serviceclass{
+      display: block;
+      }
+      .serviceclass>div{
+      width: 700px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 30px;
+      position: absolute;
+      left: 0px;
+      border-radius: 10px;
+      padding: 20px;
+      margin-right: 40px;
+     
+      top: 20px;
+      background-color: rgb(254, 245, 245);
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      
+      }.serviceclass a{
+      text-decoration: none;
+      color: rgb(91, 89, 89);
+      }
+      .serviceclass>div>div{
+      border-right: 1px solid rgb(191, 189, 189);
+      padding: 10px;
+      padding-top: 0px;
+      }
+      .serviceclass>div>div>h4{
+      margin-top: 0px;
+      }
+      .serviceclass>div>div:nth-child(4){
+      border-right: 0px solid rgb(133, 132, 132);
+      }
+      .serviceclass>div>div>div{
+      padding: 5px;
+      }
+      .serviceclass>div{
+      padding: 30px;
+      }
+      
+      .serviceclass{
+      display: none;
+      }
+
+/* admin */
+
+#adminlogin{
+  position: absolute;
+  margin-top: 3px;
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 40px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  display: none;
+}
+#adminlogin a{
+  text-decoration: none;
+  color: black;
+}
+#adminhov:hover #adminlogin{
+display: block;
+}
 
 
  /* medium screen */

@@ -1,9 +1,18 @@
 let companyURL ="https://636d633891576e19e327545a.mockapi.io/companies"
 
 
+document.getElementById("searchbtn").addEventListener("click",
+()=>{
+    window.location.href="companies.html"
+})
 
 
-
+let login = document.getElementById("loginbtn").addEventListener("click",()=>{
+    window.location.href="signin.html"
+})
+let register = document.getElementById("registerbtn").addEventListener("click",()=>{
+    window.location.href="signup.html"
+})
 
 
 
@@ -87,6 +96,9 @@ function rendercompanycarddata(arr){
     arr.forEach(element => {
         let card = document.createElement("div")
         card.classList.add("companydatacard")
+        card.addEventListener("click",()=>{
+            window.location.href= "companies.html"
+        })
       let name = document.createElement("h4");
       name.innerText = element.name;
 //console.log(name)
@@ -244,3 +256,7 @@ fetchdata();
 
 })
 }
+
+
+
+
