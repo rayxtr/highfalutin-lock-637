@@ -63,6 +63,49 @@ if(dataId==null){
    </div>
    </form>
    ` 
+   let save_add_btn=document.querySelector("#save")
+   save_add_btn.addEventListener("click",(event)=>{
+  event.preventDefault()
+    let comp_name=document.querySelector("#company_name")
+    let comp_logo=document.querySelector("#company-logo")
+    let comp_job=document.querySelector("#company_job_role")
+    let comp_contact=document.querySelector("#company_contact")
+    let comp_exp=document.querySelector("#company_exp")
+    let comp_salary=document.querySelector("#company_salary")
+    let comp_lct=document.querySelector("#company_loca")
+    let comp_desc=document.querySelector("#company_desc")
+    let obj={
+        description:comp_desc.value ,
+        companyName: comp_name.value,
+        avatar: comp_logo.value,
+        contact: comp_contact.value,
+        experience: comp_exp.value,
+        Salary: comp_salary.value,
+        location: comp_lct.value,
+        rating: "4.1/5",
+        jobRole: comp_job.value
+        }
+    addtoserver(obj)
+   }) 
+}
+
+async function addtoserver(obj){
+try {
+    let add_data=await fetch('https://636d633891576e19e327545a.mockapi.io/companies',{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(obj)
+        })
+        if( add_data.ok){
+          alert("Data Added Successfully")
+        }else{
+            alert("Data not added.\nPlease Try Again")
+        }
+} catch (error) {
+    alert("Bad Request")
+}
 }
 window.addEventListener("load",()=>{
    if(dataId!=null){
