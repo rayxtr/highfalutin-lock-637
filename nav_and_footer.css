@@ -24,6 +24,7 @@
   
     display: flex;
     justify-content:space-around;
+    align-items: center;
     margin-left: 10px;
   }
   #navleft ul>a{
@@ -215,7 +216,8 @@ color: blue;
   margin-right: 40px;
   left: 0;
   top: 20px;
-  background-color:rgb(254, 245, 245);
+  background-color:rgb(247, 243, 243);
+  /* background-color:#fff; */
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   
   }.jobclass a{
@@ -352,6 +354,10 @@ color: blue;
 #adminlogin a{
   text-decoration: none;
   color: black;
+}
+#adminhov {
+  display: flex;
+  align-items: center;
 }
 #adminhov:hover #adminlogin{
 display: block;

@@ -1,3 +1,13 @@
+let login = document.getElementById("loginbtn").addEventListener("click",()=>{
+  window.location.href="signin.html"
+})
+let register = document.getElementById("registerbtn").addEventListener("click",()=>{
+  window.location.href="signup.html"
+})
+let landingPage = document.getElementById("dashboardlogo").addEventListener("click",()=>{
+  window.location.href="index.html"
+})
+
 let fetchURL = "https://636d633891576e19e327545a.mockapi.io/companies";
 
 let companyData = document.querySelector(".companyList>div");
@@ -13,7 +23,7 @@ async function fetchData(pageNumber = 1) {
     let totalPage = 5;
     paginationData(totalPage);
   } catch (err) {
-    alert("Error Occurred");
+    console.log("Error Occurred");
   }
 }
 
