@@ -16,7 +16,7 @@
  #searchsection{
  text-align: center;
  margin-bottom: 40px;
- margin-top: 70px;
+ margin-top: 90px;
  }
  #searchsection>div{
 display: flex;
@@ -25,7 +25,7 @@ padding: 10px;
 border-radius: 20px;
 margin: auto;
 box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-margin-top: 40px;
+margin-top: 60px;
  }
 
  #searchsection input{
@@ -101,12 +101,22 @@ border: 1px solid gray;
   z-index: 900;
  }
  .companyList {
+  
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
  position: relative;
   width: calc(100% );
   box-sizing: border-box;
   border-radius: 20px;
-  margin-top: 80;
+  margin-top: 100px;
+  height: 400px;
+}
+#featuredcompany{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+ position: relative;
+  width: calc(100% );
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin-top: 100px;
 }
 .companyList h1{
   padding-top: 30px;
@@ -116,9 +126,42 @@ border: 1px solid gray;
 #displaycompany {
  width: 100%;
  display: flex;
- overflow-x: hidden;
+ overflow-x: scroll;
  gap: 30px;
  margin-bottom: 50px;
+ height: 250px;
+}
+#displaycompany::-webkit-scrollbar{
+  display: none;
+}
+#featureslide::-webkit-scrollbar{
+  display: none;
+}
+#featuredcompany{
+  width: 100%;
+  height: 550px;
+}
+#featuredcompany h1{
+padding: 20px;
+}
+#featureslide{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(40,1fr);
+  overflow-x: scroll;
+  gap: 30px;
+  margin-bottom: 50px;
+ 
+}
+#featureslide>div{
+  width: 200px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  height: auto;
+}
+#featureslide>div>div>img{
+  width: 50%;
+  
 }
 .companyList>div>div {
   padding: 24px;
@@ -128,7 +171,7 @@ border: 1px solid gray;
   border-radius: 20px 4px;
   box-shadow: 0 4px 10px 0 rgb(0 77 255 / 4%);
   cursor: pointer;
-   height: fit-content;
+   height: auto;
 }
 .companyList>div>div:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -197,7 +240,9 @@ border: 1px solid gray;
 }
 #featureslide{
   margin-top: 20px;
-  border: 1px solid black;
+ 
+  border-radius: 10px;
+  padding: 20px;
   width: 100%;
   height: 350px;
 }
@@ -275,7 +320,7 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   grid-template-columns: repeat(4,1fr);
   gap: 10px;
   margin-top: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 90px;
 }
 .careerdiv{
   border: 1px solid rgb(92, 203, 255);
