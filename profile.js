@@ -1,10 +1,56 @@
 
-let profile = [{
-    name: "Madhusudan Amoli",
-    location: "Haridwar",
-    contact: "010101010",
-    email: "abc@gmail.com",
-    image: "https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+let profile = JSON.parse(localStorage.getItem("accdata"))||[];
+
+ displaydata(profile);
+ 
+
+function displaydata(profile){
+    let maincontainer = document.querySelector("#Main");
+    profile.forEach((el)=>{
+        maincontainer.innerHTML = `
+
+                <div id="full">
+                <div class="name">
+                 <img src="${el.image}"/>
+                  <h2>${el.fname} ${el.lname}</h2>
+               </div>
+                <pre>
+                 <div class="detail">
+                
+                 <p><i class="material-icons">&#xe55f;</i> ${el.location}</p>
+                 <p><i class="material-icons">&#xe551;</i> ${el.mob}</p>
+                 <p><i class="material-icons">&#xe2c7;</i> ${el.exp}        
+         </p>
+         <p><i class="material-icons">&#xe0be;</i> ${el.email}</p>
+            
+             </div>
+             </pre>
+             </div>
+                 <div id="pending">
+                 <h2>Pending Actions</h2>
+                 <hr>
+                 <p>Add Profile Summary</p>
+                 <p>Complete your profile </p>
+                 <a href="">View All</a>
+                 </div>
+             `
+    });
+};
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////
+
+
+let savedata = [{
+    
     rollskill: ["java", "javascript", "html", "css", "react"],
     softskill:["Time management"," Team Collaboration", "Good communication"," Problem Solving  "],
     education: {
@@ -14,12 +60,9 @@ let profile = [{
     },
     experience: "Fresher"
 }];
+displaysave(savedata);
 
-
-displaydata(profile);
-
-function displaydata(profile) {
-    let maincontainer = document.querySelector("#Main");
+function displaysave(savedata){
     let resume = document.querySelector("#resume");
     let headline = document.querySelector("#headline");
     let roleskil = document.querySelector("#roleskill");
@@ -27,50 +70,18 @@ function displaydata(profile) {
     let education = document.querySelector("#education");
     let summary = document.querySelector("#projectsummary");
     
+    savedata.forEach((el)=>{
 
-
-
-    profile.forEach((el) => {
-
-        maincontainer.innerHTML = `
-
-        <div id="full">
-        <div class="name">
-        <img src="${el.image}"/>
-         <h2>${el.name}</h2>
-        </div>
-       <pre>
-        <div class="detail">
-        
-        <p><i class="material-icons">&#xe55f;</i> ${el.location}</p>
-        <p><i class="material-icons">&#xe551;</i> ${el.contact}</p>
-        <p><i class="material-icons">&#xe2c7;</i> ${el.experience}        
-</p>
-<p><i class="material-icons">&#xe0be;</i> ${el.email}</p>
-    
-    </div>
-    </pre>
-    </div>
-        <div id="pending">
-        <h2>Pending Actions</h2>
-        <hr>
-        <p>Add Profile Summary</p>
-        <p>Complete your profile </p>
-        <a href="">View All</a>
-        </div>
-    `
-
-resume.innerHTML =`
+        resume.innerHTML =`
         <h2>Resume</h2>
         <p>Resume is the most important document recruiters look for. Recruiters generally do not look at profiles without resumes.</p>
 
         <div id="btn">
-        <button type="upload" id="upload">UPDATE RESUME</button>
-        <span>Supports Formats: doc, docx, pdf, rtf, upto 2 mb</span>
-        </div>
+       <button type="upload" id="upload">UPDATE RESUME</button>
+      <span>Supports Formats: doc, docx, pdf, rtf, upto 2 mb</span>
+        </div>`
 
-`
-let btn = document.querySelector("#upload");
+ let btn = document.querySelector("#upload");
 btn.addEventListener("click",opendialog);
 
 function opendialog(e){
@@ -119,7 +130,6 @@ el["softskill"].forEach((el)=>{
    innerdiv.append(li);
     softskill.append(innerdiv); 
 });
-
 education.innerHTML=`
     <h2>Education <button id="eduedit" class="edit"><i class="material-icons">&#xe254;</i></button></h2>
    <div> <h3>Post Graduation: </h3><input type="text" id="pg" readonly value="${el.education.PostGraduation}" class="value education"></div>
@@ -135,12 +145,20 @@ summary.innerHTML=`
 
 <input type="text" readonly value="${el.education.Graduation}" class="value" id="summarychange">
 `
- });
 
-}
+    });
+
+};
+//////////////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+
+
+ let newdata = [];
 
 let summarybutton = document.querySelector("#summedit");
 summarybutton.addEventListener("click",(e)=>{
+    e.preventDefault();
 let inp = document.querySelector("#summarychange");
 inp.removeAttribute("readonly");
 inp.style.backgroundColor="gray";
@@ -190,12 +208,15 @@ headlinebutton.addEventListener("click",()=>{
     inp.style.backgroundColor="gray";
     inp.style.color="white";
 });
-
+////////////////////////////////////////
 
 let savebutton = document.querySelector("#save");
-savebutton.addEventListener("click",savedata);
 
-function savedata(e){
+/////////////////////////////////////////////////
+//////////////////////////////////////////////
+savebutton.addEventListener("click",savdata);
+
+function savdata(e){
 e.preventDefault();
 
 let headline= document.querySelector(".head").value;
@@ -229,10 +250,13 @@ let summary = document.querySelector("#summarychange").value;
 let detailobj={
     headline,rollskill,softskill,education,summary
 }
-
-
-
-
-
+newdata.push(detailobj);
+displaysave(newdata);
 }
 
+
+
+let logout = document.querySelector("#logout");
+logout.addEventListener("click",()=>{
+    window.location.href="./index.html";
+})

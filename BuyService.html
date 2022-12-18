@@ -4,17 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <link rel="stylesheet" href="/profile.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Buy Services</title>
     <link rel="stylesheet" href="/nav_and_footer.css">
-    
 </head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #cartmain{
+        width: 50%;
+        margin: auto;
+        box-shadow: 1px 2px 1px 2px gray;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background-color: rgb(12, 120, 245);
+        color: gray;
+    }
+    #cartmain>div{
+        width: 60%;
+        margin: auto;
+        box-shadow: 2px 1px 1px 2px yellow;
+        background-color: white;
+    }
+   
+    button{
+        width: 20%;
+        height: 40px;
+        margin:20px 40%;
+        border: none;
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        
+    }
+    input{
+        width: 10%;
+        height: 40px;
+        margin:0 45%;
+        border: none;
+    }
+</style>
 <body>
     <div id="nav" class="box-shdow">
         <div id="navleft">
             <div id="dashboardlogo"><img width="100%"  src="images/logo/jobHunt1.com.png" alt="logo"></div>
-            <ul id="job"><a  class="css-ul-hover-menu"  href="/job.html">Jobs </a>
+            <ul id="job"><a  class="css-ul-hover-menu"  href="job.html">Jobs </a>
                 <div class="jobclass">
                     <div>
                         <div>
@@ -149,106 +191,82 @@
         </div>
        </div>
       
-    
+       <div id="cartmain">
+           
        </div>
-    
-    <div class="information" id="Main">
+       <button id="buyit">BUY NOW</button>
 
-    </div>
-<div id="section">
-    <div class="side">
-        <h2>Quick Links</h2>
-        <ul>
-       <li> <a href="#resume">Resume</a></li>
-       <li> <a href="#headline">Resume Headline</a></li>
-       <li> <a href="#roleskill">Roleskill</a></li>
-       <li> <a href="#keyskill">SoftSkill</a></li>
-       <li> <a href="#education">Education</a></li>
-       <li> <a href="#projectsummary">Summary</a></li>
-        
-            
-        </ul>
-    </div>
-    <div class="right">
-    <div id="resume"></div>
-        <div id="headline"></div>
-        <div id="roleskill"></div>
-        <div id="keyskill"></div>
-        <div id="education"></div>
-        <div id="projectsummary"></div>
-        <div id="save"><button>Save</button></div>
-    </div>
-</div>
-<hr>
-<div id="footer-wrap">
-    <div id="footer1">
-        <div id="f1left">
-            <div>
-                <img width="60%" src="images/logo/jobHunt1.com.png" alt="">
-                <p>Connect with us</p>
+       <input type="text"  id="pas">
+    
+       
+       <div id="footer-wrap">
+        <div id="footer1">
+            <div id="f1left">
                 <div>
-                  <a href="https://www.facebook.com/Naukri/" target="_blank"><img src="https://static.naukimg.com/s/0/0/i/new-homepage/facebook.svg" alt="facebook"></a>
-                  <a href="https://www.instagram.com/naukridotcom/?hl=en" target="_blank"><img src="https://static.naukimg.com/s/0/0/i/new-homepage/instagram.svg" alt="instagram"></a>
-                  <a href="https://twitter.com/Naukri?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="https://static.naukimg.com/s/0/0/i/new-homepage/twitter.svg" alt="twitter"></a>
-                  <a href="https://www.linkedin.com/company/naukri.com/?originalSubdomain=in" target="_blank"><img src="https://static.naukimg.com/s/0/0/i/new-homepage/linkedin.svg" alt="linkdIn"></a>
-     
+                    <img width="60%" src="images/logo/jobHunt1.com.png" alt="">
+                    <p>Connect with us</p>
+                    <div>
+                      <a href="https://www.facebook.com/Naukri/" target="_blank"><img src="https://static.naukimg.com/s/0/0/i/new-homepage/facebook.svg" alt="facebook"></a>
+                      <a href="https://www.instagram.com/naukridotcom/?hl=en" target="_blank"><img src="https://static.naukimg.com/s/0/0/i/new-homepage/instagram.svg" alt="instagram"></a>
+                      <a href="https://twitter.com/Naukri?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src="https://static.naukimg.com/s/0/0/i/new-homepage/twitter.svg" alt="twitter"></a>
+                      <a href="https://www.linkedin.com/company/naukri.com/?originalSubdomain=in" target="_blank"><img src="https://static.naukimg.com/s/0/0/i/new-homepage/linkedin.svg" alt="linkdIn"></a>
+         
+                    </div>
                 </div>
             </div>
+            <div id="f1mid" style="justify-content: space-evenly;">
+                <div>
+                 <ul><a class="css-ul footer-link css-ul-hover" href="">About us</a></ul>
+                 <ul><a class="css-ul footer-link css-ul-hover" href="">Careers </a></ul>
+                 <ul><a class="css-ul footer-link css-ul-hover" href="">Employer Home</a></ul>
+                 <ul><a class="css-ul footer-link css-ul-hover" href="">Site map</a></ul>
+                </div>
+                <div>
+                    <ul><a class="css-ul footer-link css-ul-hover" href="">Help center</a></ul>
+                    <ul><a class="css-ul footer-link css-ul-hover" href="">Summons/Notices</a></ul>
+                    <ul><a class="css-ul footer-link css-ul-hover" href="">Grievances</a></ul>
+                    <ul><a class="css-ul footer-link css-ul-hover" href="">Report issue</a></ul>
+                </div>
+                <div>
+                    <ul><a class="css-ul footer-link css-ul-hover" href="">Privacy policy</a></ul>
+                    <ul><a class="css-ul footer-link css-ul-hover" href="">Terms & conditions</a></ul>
+                    <ul><a class="css-ul footer-link css-ul-hover" href="">Fraud alert</a></ul>
+                    <ul><a class="css-ul footer-link css-ul-hover" href="">Trust & safety</a></ul>
+                </div>
+            </div>
+            <div id="f1right">
+               <div>
+                <h3>Apply on the go</h3>
+                <p>Get real-time job updates on our App</p>
+                <div>
+                    <img src="https://static.naukimg.com/s/0/0/i/new-homepage/android-app.png" alt="playstor">
+                    <img src="https://static.naukimg.com/s/0/0/i/new-homepage/ios-app.png" alt="applestore">
+                </div>
+               </div>
+            </div>
         </div>
-        <div id="f1mid" style="justify-content: space-evenly;">
-            <div>
-             <ul><a class="css-ul footer-link css-ul-hover" href="">About us</a></ul>
-             <ul><a class="css-ul footer-link css-ul-hover" href="">Careers </a></ul>
-             <ul><a class="css-ul footer-link css-ul-hover" href="">Employer Home</a></ul>
-             <ul><a class="css-ul footer-link css-ul-hover" href="">Site map</a></ul>
+        <hr>
+        <div id="footer2" style="display: flex; align-items: center;">
+           
+           
+                <div>
+                    <img src="https://static.naukimg.com/s/0/0/i/new-homepage/infoedge-logo.svg" alt="infoedge-logo">
+                </div>
+                <div>
+                    <p class="css-ul footer-link">All trademarks are the property of their respective owners</p>
+                    <p class="css-ul footer-link">All rights reserved © 2022 Info Edge (India) Ltd. </p>
+                </div>
+        
+            <p class="css-ul footer-link">Our Businesses : </p>
+            <div id="our_businesses">
+                 <div><img src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/jeevansathi.png" alt=""></div>
+                 <div><img src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/nnacres.png" alt=""></div>
+                 <div><img src=" https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/shiksha.png" alt=""></div>
+                 <div><img src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/firstNaukri.png" alt=""></div>
             </div>
-            <div>
-                <ul><a class="css-ul footer-link css-ul-hover" href="">Help center</a></ul>
-                <ul><a class="css-ul footer-link css-ul-hover" href="">Summons/Notices</a></ul>
-                <ul><a class="css-ul footer-link css-ul-hover" href="">Grievances</a></ul>
-                <ul><a class="css-ul footer-link css-ul-hover" href="">Report issue</a></ul>
-            </div>
-            <div>
-                <ul><a class="css-ul footer-link css-ul-hover" href="">Privacy policy</a></ul>
-                <ul><a class="css-ul footer-link css-ul-hover" href="">Terms & conditions</a></ul>
-                <ul><a class="css-ul footer-link css-ul-hover" href="">Fraud alert</a></ul>
-                <ul><a class="css-ul footer-link css-ul-hover" href="">Trust & safety</a></ul>
-            </div>
+        
         </div>
-        <div id="f1right">
-           <div>
-            <h3>Apply on the go</h3>
-            <p>Get real-time job updates on our App</p>
-            <div>
-                <img src="https://static.naukimg.com/s/0/0/i/new-homepage/android-app.png" alt="playstor">
-                <img src="https://static.naukimg.com/s/0/0/i/new-homepage/ios-app.png" alt="applestore">
-            </div>
-           </div>
         </div>
-    </div>
-    <hr>
-    <div id="footer2" style="display: flex; align-items: center;">
-       
-       
-            <div>
-                <img src="https://static.naukimg.com/s/0/0/i/new-homepage/infoedge-logo.svg" alt="infoedge-logo">
-            </div>
-            <div>
-                <p class="css-ul footer-link">All trademarks are the property of their respective owners</p>
-                <p class="css-ul footer-link">All rights reserved © 2022 Info Edge (India) Ltd. </p>
-            </div>
-    
-        <p class="css-ul footer-link">Our Businesses : </p>
-        <div id="our_businesses">
-             <div><img src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/jeevansathi.png" alt=""></div>
-             <div><img src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/nnacres.png" alt=""></div>
-             <div><img src=" https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/shiksha.png" alt=""></div>
-             <div><img src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/firstNaukri.png" alt=""></div>
-        </div>
-    
-    </div>
-    <!-- THE END -->
-</div>
 </body>
 </html>
-<script src="/profile.js"></script>
+<script src="/buyservice.js"></script>
