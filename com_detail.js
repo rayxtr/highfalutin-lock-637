@@ -7,13 +7,13 @@ function renderDetails() {
     data.innerHTML = `
         <img src=${detailData.avatar} alt="">
         <p>${detailData.description}</p>
-        <h1>${detailData.companyName}</h1>
-        <p>${detailData.rating}</p>
-        <p>${detailData.experience}</p>
-        <p>${detailData.contact}</p>
-        <p>${detailData.Salary}</p>
-        <p>${detailData.location}</p>
-        <p>${detailData.jobRole}</p>
+        <h2>${detailData.companyName}</h2>
+        <p><i class="fa-solid fa-star"></i> ${detailData.rating}</p>
+        <p>Experience : ${detailData.experience}</p>
+        <p>Contact : ${detailData.contact}</p>
+        <p>Salary : ${detailData.Salary}</p>
+        <p>Location : ${detailData.location}</p>
+        <p>Job Role : ${detailData.jobRole}</p>
     `
 }
 renderDetails();

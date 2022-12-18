@@ -245,9 +245,10 @@ main {
 .hiring h2 {
     padding-bottom: 20px;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 24px;
     color: #1b2437;
+    text-align: center;
 }
 .hiring>div {
     box-shadow: 0 4px 10px rgb(0 77 255 / 4%);
@@ -255,7 +256,7 @@ main {
     border: 1px solid #eaf1f5;
     border-radius: 12px 6px;
     padding: 26px 28px;
-    height: 200px;
+    height: 240px;
 }
 .hiring>div>div {
     display: flex;
@@ -272,8 +273,8 @@ main {
 .hiring-part h3 {
     font-size: 18px;
     cursor: pointer;
-    padding-bottom: 20px;
-    border-bottom: 4px solid orange;
+    padding:0 6px 12px 6px;
+    /* border-bottom: 4px solid orange; */
 }
 .hiring-part .active {
     display: grid;
@@ -288,6 +289,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px 70px;
+    padding: 6px;
 }
 .hiring-part ul li{
     list-style: disc;
@@ -296,3 +298,19 @@ main {
 /* .hiring-part #first {
     display: grid;
 } */
+
+.india {
+    margin-top: -100px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+.india a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin: auto 4px;
+}
+.india a:hover {
+    color: blue;
+}
