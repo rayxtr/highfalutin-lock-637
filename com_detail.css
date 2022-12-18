@@ -1,7 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 main {
     width: 40%;
     margin: 50px auto;
 }
 .data {
     text-align: center;
+}
+.data img {
+    width: 200px;
+    height: 200px;
+}
+.data p {
+    font-size: 18px;
+    font-weight: 300;
+    color: #5c657c;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.data h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 20px auto;
+}
+.fa-star {
+    color: rgb(255, 221, 0);
 }

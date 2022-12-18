@@ -6,7 +6,7 @@ let arr = [];
 // fetch company data
 async function fetchData(pageNumber = 1) {
   try {
-    let res = await fetch(`${fetchURL}?page=${pageNumber}&limit=16`);
+    let res = await fetch(`${fetchURL}?page=${pageNumber}&limit=14`);
     let data = await res.json();
     arr = data;
     renderData(arr);
@@ -147,16 +147,28 @@ let hiringParts = document.querySelectorAll(".hiring-part h3");
 
 for (let i = 0; i < hiringParts.length; i++) {
   hiringParts[0].nextElementSibling.style.display = "block";
+  hiringParts[0].style.borderBottom = "4px solid orange"
   hiringParts[i].addEventListener("click", function () {
     if (i == 0) {
+      hiringParts[0].style.borderBottom = "4px solid orange"
+      hiringParts[1].style.borderBottom = "none"
+      hiringParts[2].style.borderBottom = "none"
       hiringParts[0].nextElementSibling.style.display = "block";
       hiringParts[1].nextElementSibling.style.display = "none";
       hiringParts[2].nextElementSibling.style.display = "none";
-    } else if (i == 1) {
+    } 
+    else if (i == 1) {
+      hiringParts[1].style.borderBottom = "4px solid orange"
+      hiringParts[0].style.borderBottom = "none"
+      hiringParts[2].style.borderBottom = "none"
       hiringParts[1].nextElementSibling.style.display = "block";
       hiringParts[0].nextElementSibling.style.display = "none";
       hiringParts[2].nextElementSibling.style.display = "none";
-    } else if (i == 2) {
+    } 
+    else if (i == 2) {
+      hiringParts[2].style.borderBottom = "4px solid orange"
+      hiringParts[0].style.borderBottom = "none"
+      hiringParts[1].style.borderBottom = "none"
       hiringParts[2].nextElementSibling.style.display = "block";
       hiringParts[0].nextElementSibling.style.display = "none";
       hiringParts[1].nextElementSibling.style.display = "none";
