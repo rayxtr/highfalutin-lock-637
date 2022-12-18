@@ -36,11 +36,13 @@ async function fetchdata(){
        //render_featurecard(data)
        
        realData = data;
-       renderData(data)
+       renderData(realData)
+       renderData2(realData)
     } catch (error) {
         alert("someting went wrong")
     }
 }
+
 
 //Navigation Bar 
 
@@ -150,19 +152,14 @@ function renderData(comData) {
 
 }
 
-// let leftbtn = document.getElementById("#btnleft");
-// let rightbtn = document.getElementById("#btnleft");
 
-// leftbtn.addEventListener("click",function(){
-//     document.getElementById("displaycompany").scrollleft= +900;
-// })
 
 //Featured Companies 
 let featurecompany = document.querySelector("#featureslide");
-function renderData(comData) {
+function renderData2(comData) {
     // render data
-    companyData.innerHTML = "";
-    companyData.innerHTML = comData.map((item) => {
+    featurecompany.innerHTML = "";
+    featurecompany.innerHTML = comData.map((item) => {
         return `
             <div class="combox" data-id=${item.id}>
                 <div>
@@ -256,6 +253,8 @@ fetchdata();
 
 })
 }
+
+
 
 
 
