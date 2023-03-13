@@ -10,3 +10,4 @@ Features:
 5 - Service page to buy premium services for resume making and some interview preparation
 6 - Admin panel to add and remove companies and make any changes into it.
 
+Deployed Link : https://jobhun.netlify.app/
